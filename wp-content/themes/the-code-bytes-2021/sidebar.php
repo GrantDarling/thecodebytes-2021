@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

@@ -1,0 +1,147 @@
+/*-----------------------------------------------------------------------------
+# COMMENTS
+-----------------------------------------------------------------------------*/
+//Navigation
+
+.navigation.post-navigation {
+  $padding: 20px;
+  width: 90%;
+  margin: 50px auto 100px;
+  padding-bottom: 50px;
+
+  h2 {
+    padding: 0 0 0 $padding;
+  }
+
+  .nav-next,
+  .nav-previous {
+    padding: 0 $padding;
+    width: 50%;
+    float: left;
+  }
+}
+//Full Comment Area
+
+.comments-area {
+  .comments-title {
+    text-align: center;
+  }
+}
+//The comment bubble styling
+
+.comment-list {
+  width: 90%;
+  margin: auto;
+  padding: 0;
+  list-style-type: none;
+
+  .children {
+    list-style-type: none;
+  }
+  //The comment header
+  .comment-meta {
+    padding: 15px;
+  }
+  //The date
+  .comment-metadata {
+    text-align: right;
+  }
+
+  .comment-body {
+    margin: 40px 0;
+    border: 1px solid #292626;
+    border-radius: 3px;
+    box-shadow: 2px 1px 6px tint($black, 20%);
+  }
+
+  .comment-content,
+  .reply {
+    padding: 10px;
+  }
+
+  .avatar {
+    border-radius: 25px;
+  }
+}
+//Comment Form
+
+#respond {
+  #reply-title,
+  .comment-notes {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .form-submit {
+    width: 80%;
+    margin: 10px auto !important;
+    height: 30px;
+    font-size: 18px;
+
+    input {
+      width: 100%;
+      margin-left: auto;
+    }
+  }
+}
+//Comment Form
+
+#commentform {
+  margin-bottom: 60px;
+
+  #submit {
+    height: 50px;
+    margin: 20px 0;
+    border: solid $black 2px;
+
+    &:hover {
+      background: shade($accent-color-2, 10%);
+    }
+  }
+
+  .logged-in-as {
+    width: 80%;
+    margin: auto;
+
+    a {
+      padding-right: 10px;
+    }
+  }
+  //consent
+  p.comment-form-cookies-consent {
+    position: relative;
+    width: 85%;
+    margin: auto;
+    input {
+      position: absolute;
+      left: 10px;
+    }
+  }
+}
+/*================ Medium ================*/
+@include respond-to('medium') {
+  //Adjust entire width
+  #respond,
+  .comment-list .comment-body {
+    width: 80%;
+    margin: 40px auto;
+  }
+
+  .navigation.post-navigation {
+    width: 70%;
+  }
+}
+/*================ Large ================*/
+@include respond-to('large') {
+  //Adjust entire width
+  #respond,
+  .comment-list .comment-body {
+    width: 60%;
+    margin: 40px auto;
+  }
+
+  .navigation.post-navigation {
+    width: 55%;
+  }
+}

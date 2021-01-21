@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 get_header();

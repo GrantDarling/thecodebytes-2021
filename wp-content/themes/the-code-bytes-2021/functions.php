@@ -1,10 +1,10 @@
 <?php
 /**
- * TheCodeBytes2021 functions and definitions
+ * The Code Bytes 2021 functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -24,7 +24,7 @@ if ( ! function_exists( 'the_code_bytes_2021_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on TheCodeBytes2021, use a find and replace
+		 * If you're building a theme based on The Code Bytes 2021, use a find and replace
 		 * to change 'the-code-bytes-2021' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'the-code-bytes-2021', get_template_directory() . '/languages' );
@@ -178,3 +178,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Remove Gutenberg Block Library CSS from loading on the frontend
+ */
+function smartwp_remove_wp_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+} 
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
+/**
+ * Change Search FormName
+ */
+
+ add_filter( 'get_search_form', 'rlv_search_form' );
+function rlv_search_form( $form ) {
+    $form = str_replace( 'Search &hellip;', 'Search &hellip; Minimum 3 letters', $form );
+    return $form;
+}

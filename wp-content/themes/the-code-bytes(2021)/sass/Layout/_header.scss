@@ -1,0 +1,395 @@
+/*-----------------------------------------------------------------------------
+# HEADER
+-----------------------------------------------------------------------------*/
+//Initial Heights
+//Searchbar
+.search-field,
+.search-submit,
+.search-title,
+input.search-field,
+span.screen-reader-text {
+  display: none; //hide for mobile
+}
+
+//Top Navbar
+
+.header__top-bar {
+  height: $header__top-bar-height;
+  position: relative;
+  z-index: 9999;
+  background: url('https://thecodebytes.com/wp-content/uploads/2020/05/top-nav-background.svg'),
+    #312c2c;
+  //Logo
+  .custom-logo-link {
+    margin: auto;
+
+    .custom-logo {
+      height: 205px;
+      width: auto;
+    }
+  }
+  //SEO descriptions
+  .site-description,
+  .site-title {
+    @include hide-visually; //keep for screen readers & SEO purposes
+  }
+}
+//Middle Navbar
+
+.header__nav-bar {
+  background: $black;
+  height: 55px;
+
+  //Mobile menu
+  #header__mobile-menu {
+    font-family: $accent-stack;
+    margin-left: 10px;
+    z-index: 9;
+    padding: 7px 16px 5px;
+    border-radius: 7px;
+    height: auto;
+    background: $black;
+    color: tint($accent-color-1, 40%);
+    text-transform: capitalize;
+    border: solid 1px $text-color;
+    font-size: 1.5rem;
+
+    &:hover {
+      border: solid 1px tint($accent-color-1, 40%);
+    }
+
+    &:active {
+      color: $accent-color-1;
+      border: solid 1px $accent-color-1;
+    }
+  }
+}
+//Banner Navbar
+
+.header__banner-bar {
+  background: $accent-color-1;
+  height: 28px;
+  z-index: 9;
+  position: relative;
+
+  #banner__close {
+    position: relative;
+    border-radius: 60%;
+    font-family: $accent-stack;
+    color: $accent-color-2;
+    background: $text-color;
+    margin: auto 5px auto auto;
+    border: none;
+    height: 25px;
+    width: 25px;
+    font-size: 14px;
+    padding-top: 4px;
+    margin-top: -25px;
+  }
+  //Menu button
+  .header__banner-menu {
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+
+    a {
+      color: $white;
+      font-family: $primary-stack;
+      text-decoration: none;
+      padding: 0 5px;
+      margin: 0 25px;
+      font-size: 1.8rem;
+    }
+  }
+  #menu-item-69,
+  #menu-item-70 {
+    display: none; //Hide unnecessary menu items on mobile
+  }
+}
+//Menu items
+
+#primary-menu {
+  background: $black;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    padding: 3rem 0;
+    border: solid 1px;
+    @include border-color(null null $accent-color-1 null);
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: $accent-stack;
+    font-size: 1.2rem;
+    word-spacing: -6px;
+
+    &:hover {
+      color: $accent-color-2;
+    }
+  }
+}
+//External tree links
+
+.header__icon {
+  @include position(absolute, 10px 10px null null);
+  height: 40px;
+  width: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+//Make mobile menu placed above dropdown list
+
+.menu-banner-menu-container {
+  width: 100%;
+  margin: 2px 0;
+}
+
+.menu-main-nav-container {
+  width: 100%;
+  z-index: 8;
+}
+/*================ Medium ================*/
+@include respond-to('medium') {
+  .search-field {
+    display: block;
+  }
+
+  .site-description {
+    @include hide-visually('unhide');
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    font-family: $primary-stack;
+    color: tint($accent-color-1, 70%);
+    font-size: 18px;
+  }
+
+  .header__top-bar {
+    height: 120px;
+    position: relative;
+    z-index: 9999;
+    a.custom-logo-link img.custom-logo {
+      height: 140px;
+      width: auto;
+      margin: 0 0 -60px 15px;
+      z-index: 999;
+      position: relative;
+    }
+    a.custom-logo-link {
+      margin: 0 0 0 10px !important;
+    }
+  }
+
+  .header__banner-menu {
+    #menu-item-69,
+    #menu-item-70 {
+      display: block;
+    }
+  }
+  #header__mobile-menu {
+    margin-left: auto !important;
+    margin-right: 20px !important;
+  }
+
+  .header__icon {
+    position: absolute;
+    display: inline-block;
+    top: initial;
+    left: initial;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  #header__icon2,
+  #header__icon3 {
+    top: initial !important;
+  }
+
+  #header__icon2 {
+    right: 70px;
+  }
+
+  #header__icon1 {
+    right: 120px;
+  }
+
+  .menu-main-nav-container {
+    margin: auto 10%;
+  }
+  .header__banner-bar #banner__close {
+    margin-top: -27px;
+  }
+}
+
+/*================ Medium - Large ================*/
+@include respond-to('medium-large') {
+  input.search-field {
+    display: block;
+    position: absolute;
+    right: 20px;
+    width: 132px;
+    bottom: 14px;
+    background: black;
+    border: solid 1px grey;
+    height: 25px;
+    font-size: 1rem;
+    padding: 5px;
+    color: white;
+
+    &::placeholder {
+      color: shade($white, 20%);
+    }
+  }
+
+  #primary-menu {
+    height: 55px;
+
+    li {
+      width: auto;
+      margin: auto;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  #header__mobile-menu {
+    display: none;
+  }
+}
+/*================ Animations ================*/
+.header__mobile-dropdown {
+  //animation: mobile-dropdown 0.3s forwards;
+  //height: calc(90vh - 158px);
+  height: calc(90vh);
+  overflow-y: scroll;
+  width: 100vw;
+  z-index: 10;
+}
+
+.header__li-dropdown-ani {
+  animation: li-dropdown 1s forwards;
+}
+
+.header__mobile-pullup {
+  //animation: mobile-pullup 1s forwards; //Anti Animations
+  height: 50px;
+}
+
+.header__li-pullup-ani {
+  //animation: li-pullup 1s forwards;
+  margin-top: -1300px;
+}
+//Background for top bar icons
+
+.header__banner-closed {
+  animation: rise-close-banner 0.3s forwards;
+}
+
+// #header__icon1 {
+//   background: url("https://thecodebytes.com/wp-content/uploads/2020/05/medium-icon.svg") no-repeat center/contain;
+
+//   &:hover {
+//     background: url("https://thecodebytes.com/wp-content/uploads/2020/05/medium-icon-active.svg") no-repeat center/contain;
+//   }
+// }
+
+// #header__icon2 {
+//   top: 60px;
+//   background: url("https://thecodebytes.com/wp-content/uploads/2020/05/developer-icon.svg") no-repeat center/contain;
+
+//   &:hover {
+//     background: url("https://thecodebytes.com/wp-content/uploads/2020/05/developer-icon-active.svg") no-repeat center/contain;
+//   }
+// }
+
+// #header__icon3 {
+//   top: 110px;
+//   background: url("https://thecodebytes.com/wp-content/uploads/2020/05/contact-icon.svg") no-repeat center/contain;
+
+//   &:hover {
+//     background: url("https://thecodebytes.com/wp-content/uploads/2020/05/contact-icon-active.svg") no-repeat center/contain;
+//   }
+// }
+
+//Scroll Classes
+.sticky {
+  animation: banner-ani 0.2s forwards;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky2 {
+  position: fixed !important;
+  top: 0;
+}
+
+.sticky3 {
+  //animation: sticky3 0.5s forwards;
+  position: fixed !important;
+  top: 0 !important;
+}
+
+.sticky3-anti {
+  animation: anti-sticky3 0.5s forwards;
+}
+
+.close-sticky {
+  animation: banner-anti-ani 1s forwards;
+}
+/* Rename and move to keyframes */
+@keyframes sticky3 {
+  0% {
+    top: -5px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+@keyframes anti-sticky3 {
+  0% {
+    top: 45px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+@keyframes banner-ani {
+  0% {
+    margin-top: -28px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes banner-anti-ani {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    //margin-top: -28px;
+    //position: inherit;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

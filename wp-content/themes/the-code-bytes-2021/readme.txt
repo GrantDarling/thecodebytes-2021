@@ -1,4 +1,4 @@
-=== TheCodeBytes2021 ===
+=== The Code Bytes 2021 ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,7 +10,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called TheCodeBytes2021.
+A starter theme called The Code Bytes 2021.
 
 == Description ==
 
@@ -26,7 +26,7 @@ Keeping Code Cool Since 2020
 
 = Does this theme support any plugins? =
 
-TheCodeBytes2021 includes support for WooCommerce and for Infinite Scroll in Jetpack.
+The Code Bytes 2021 includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

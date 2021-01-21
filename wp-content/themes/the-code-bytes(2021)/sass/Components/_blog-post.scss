@@ -1,0 +1,64 @@
+/*-----------------------------------------------------------------------------
+# BLOG POSTS
+-----------------------------------------------------------------------------*/
+
+.blog-post {
+  max-width: 300px;
+  min-width: 270px;
+  min-height: 500px; //Make sure the blog post is not abnormally small
+  padding: 14px 12px;
+  border: solid 2px tint($black, 20%);
+  margin: 50px 20px;
+
+  background: $white;
+  color: tint($black, 20%);
+
+  font-family: $primary-stack;
+  font-size: 3rem;
+  font-weight: 300;
+  $box-shadow-blog: #343a396e;
+  box-shadow: 0 15px 11px $box-shadow-blog;
+  -moz-box-shadow: 0 15px 11px $box-shadow-blog;
+  -webkit-box-shadow: 0 15px 11px $box-shadow-blog;
+
+  &:hover {
+    box-shadow: 0 15px 20px shade($box-shadow-blog, 20%);
+  }
+
+  p {
+    font-family: $secondary-stack;
+    font-size: 1.7rem;
+    text-align: left;
+  }
+
+  img {
+    height: auto;
+    width: 125%;
+    margin: 0 -17.5%;
+    border: solid 2px tint($black, 20%);
+  }
+
+  .blog-excerpt {
+    height: 180px;
+    overflow: auto;
+    margin-bottom: 80px;
+  }
+
+  .more-link {
+    font-family: $accent-stack;
+    position: absolute;
+    bottom: 32px;
+    left: 12%;
+    font-size: 1.4rem;
+    display: block;
+    height: 40px;
+  }
+}
+
+/*================ Medium Large ================*/
+
+@include respond-to('medium-large') {
+  .blog-post {
+    margin: 55px 20px 0;
+  }
+}

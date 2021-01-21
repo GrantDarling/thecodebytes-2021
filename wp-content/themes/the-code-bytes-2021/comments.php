@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 /*

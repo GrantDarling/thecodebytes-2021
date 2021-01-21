@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 /**

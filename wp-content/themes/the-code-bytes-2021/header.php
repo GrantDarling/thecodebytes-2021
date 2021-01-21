@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 ?>
@@ -54,6 +54,33 @@
 					'menu_id'        => 'primary-menu',
 				)
 			);
+			// Search bar 
+			get_search_form();
 			?>
 		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<script>
+			
+		// Check for active link
+		const currentURL = window.location.href;
+		let menuItems = document.querySelectorAll('.menu-item');
+		
+		const displayActiveLink = () => {
+			menuItems.forEach((item) => {
+				let navAnchorURL = item.firstElementChild;
+				let parentNode = item;
+
+				if (navAnchorURL == currentURL) { 
+					// Transverse up from menuItem anchor tag
+					while(parentNode.tagName != 'NAV' || parentNode.tagName != 'BODY') {
+						if(parentNode.tagName == 'LI') { parentNode.classList.add('active'); }
+						parentNode = parentNode.parentElement
+					}
+				}
+			});
+		};
+
+		displayActiveLink();
+
+		</script>
+	</header>
+	<!-- #masthead -->

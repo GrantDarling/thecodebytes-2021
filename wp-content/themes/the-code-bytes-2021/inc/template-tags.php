@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 if ( ! function_exists( 'the_code_bytes_2021_posted_on' ) ) :

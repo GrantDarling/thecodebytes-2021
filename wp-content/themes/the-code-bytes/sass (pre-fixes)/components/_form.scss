@@ -1,0 +1,152 @@
+/*-----------------------------------------------------------------------------
+# FORMS
+-----------------------------------------------------------------------------*/
+
+#{$all-text-inputs},
+label {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+}
+
+#{$all-text-inputs} {
+  outline: none;
+  box-shadow: 2px 1px 3px $accent-color-2;
+  border: 1px solid $black;
+  border-radius: 4px;
+  font-family: $accent-stack;
+}
+
+#{$all-text-inputs-active} {
+  outline: none;
+  box-shadow: 2px 1px 3px $accent-color-2;
+  border: 1px solid $black;
+}
+
+#{$all-text-inputs-focus} {
+  outline: none;
+  box-shadow: 2px 1px 3px $accent-color-2;
+  border: 1px solid $black;
+}
+
+#{$all-text-inputs-hover} {
+  outline: none;
+  box-shadow: 2px 1px 3px $accent-color-2;
+  border: 1px solid $black;
+}
+
+#{$all-text-inputs-invalid} {
+  outline: none;
+  box-shadow: 2px 1px 3px $accent-color-2;
+  border: 1px solid $black;
+}
+
+.comment-meta {
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+
+  .comment-metadata {
+    display: inline-block;
+  }
+}
+
+.comment-author.vcard {
+  width: 50%;
+  display: inline-block;
+}
+
+input#author,
+p.comment-form-email,
+p.comment-form-url {
+  margin: auto;
+}
+
+.comment-body {
+  width: 90%;
+  margin: 60px 0;
+  border: 1px solid #292626;
+  border-radius: 3px;
+  box-shadow: 2px 1px 6px tint($black, 20%);
+}
+
+nav.navigation.post-navigation {
+  width: 80% !important;
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 25px;
+}
+
+.comment-content,
+a.comment-reply-link {
+  padding: 10px;
+}
+
+.reply {
+  margin: 10px 0;
+}
+
+.form-submit {
+  width: 80%;
+  margin: 10px auto !important;
+  height: 30px;
+  font-size: 18px;
+
+  input {
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+p.comment-form-cookies-consent {
+  display: flex !important;
+  margin: 0 !important;
+
+  input {
+    margin-top: 16px;
+  }
+}
+
+.comments-title,
+div#respond,
+nav.navigation.post-navigation {
+  padding: 0 20px;
+  width: 80%;
+  margin: auto;
+}
+
+.nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.nav-previous {
+  float: left;
+  text-align: left;
+  //clear: both;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.comment-list {
+  list-style-type: none;
+}
+
+h3#reply-title,
+p.comment-notes {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+}
+
+span.nav-title {
+  white-space: nowrap;
+}
+em.comment-awaiting-moderation {
+    display: block;
+    padding-top: 11px;
+}

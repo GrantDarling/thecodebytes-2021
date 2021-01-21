@@ -1,20 +1,17 @@
-/* Typography
---------------------------------------------- */
-@import "typography/typography";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $primary-font;
+}
 
-/* Elements
---------------------------------------------- */
-@import "elements/body";
-@import "elements/hr";
-@import "elements/lists";
-@import "elements/media";
-@import "elements/tables";
+body {
+  background-color: $body-color;
+}
 
-/* Links
---------------------------------------------- */
-@import "elements/links";
-
-/* Forms
---------------------------------------------- */
-@import "elements/buttons";
-@import "elements/fields";
+main {
+  background-color: $white;
+}

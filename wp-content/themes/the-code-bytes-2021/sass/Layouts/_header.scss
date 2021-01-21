@@ -1,0 +1,154 @@
+/* Header */
+
+// Header Div
+#masthead {
+  position: fixed;
+  display: flex;
+  background: $header-bg-color;
+  height: 60px;
+  width: 100%;
+  box-shadow: 5px -1px 13px #d3d2d2;
+}
+
+// Logo
+.custom-logo {
+  width: 150px;
+  height: auto;
+  margin: 7px 0 0 20px;
+}
+
+/* Navigation */
+
+.nav-menu {
+  a {
+    color: $CB-BLACK;
+  }
+
+  .active > a,
+  a:hover {
+    color: $CB-ACCENT;
+  }
+}
+
+// Main Nav
+.main-navigation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+
+  // Search Form
+  #search-form {
+    font-family: $accent-font;
+    display: flex;
+    height: 24px;
+
+    #s {
+      width: 125px;
+      font-size: 10px;
+      padding-top: 6px;
+    }
+
+    #searchsubmit {
+      background: none;
+      border: solid 1px #9b9999;
+      border-left: none;
+      font-size: 14px;
+    }
+  }
+
+  #search-form,
+  .menu-main-nav-container li {
+    margin: 0 40px 0 0;
+  }
+
+  a {
+    font-family: $primary-font;
+    font-weight: $bold;
+  }
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    height: 100%;
+
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+
+      ul {
+        left: -999em;
+        top: 0;
+      }
+
+      li {
+        &:hover > ul,
+        &.focus > ul {
+          display: block;
+          left: auto;
+        }
+      }
+
+      a {
+        width: 200px;
+      }
+    }
+
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+  }
+
+  li {
+    position: relative;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+// Small menu
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  .site-main & {
+    margin: 0 0 1.5em;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-previous {
+    flex: 1 0 50%;
+  }
+
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
+}

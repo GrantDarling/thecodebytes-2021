@@ -1,0 +1,55 @@
+/*-----------------------------------------------------------------------------
+# 404
+-----------------------------------------------------------------------------*/
+
+//404 Container
+.four04__main {
+  display: flex;
+  text-align: center;
+  height: 120vh;
+  width: 100%;
+  max-width: 100%;
+  background: $white;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+
+  h1,
+  p {
+    font-family: $accent-stack !important;
+  }
+
+  button {
+    margin-top: 15px;
+    height: 40px;
+    width: 130px;
+    font-size: 3rem;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.search-submit,
+span.screen-reader-text {
+  @include hide-visually; //Hide the search bar text and submit button
+}
+
+/*================ Medium ================*/
+@include respond-to('medium') {
+  .four04__main {
+    input {
+      display: block;
+      position: inherit;
+      height: 48px;
+      border: 2px solid tint($black, 20%);
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}
+//animations
+.animate {
+  animation: spin 10s linear infinite;
+}

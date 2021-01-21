@@ -1,8 +1,8 @@
 <?php
 /**
- * TheCodeBytes2021 Theme Customizer
+ * The Code Bytes 2021 Theme Customizer
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 /**

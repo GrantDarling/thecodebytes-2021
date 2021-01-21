@@ -1,0 +1,27 @@
+/*-----------------------------------------------------------------------------
+# BUTTONS
+-----------------------------------------------------------------------------*/
+
+#{$all-buttons} {
+  box-sizing: border-box;
+  height: 23px;
+  background-color: tint($accent-color-1, 40%);
+  color: $text-color;
+  border: 2px solid $white;
+  outline: none;
+  font-family: $primary-stack;
+  text-transform: uppercase;
+}
+
+#{$all-buttons-hover} {
+  color: $black;
+  cursor: pointer;
+}
+
+#{$all-buttons-active} {
+  background-color: $accent-color-1;
+}
+
+#{$all-buttons-focus} {
+
+}

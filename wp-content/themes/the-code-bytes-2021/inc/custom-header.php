@@ -8,7 +8,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 /**

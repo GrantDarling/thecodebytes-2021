@@ -1,0 +1,84 @@
+.four04__main {
+  display: flex;
+  text-align: center;
+  height: 120vh;
+  width: 100%;
+  max-width: 100%;
+  //padding: 20% 0;
+  background: $black;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  border-bottom: 5px solid grey;
+  h1, p {
+    font-family: $accent-stack !important;
+
+  }
+  button {
+    margin-top: 15px;
+    height: 40px;
+    width: 130px;
+    font-size: 3rem;
+  }
+  input {
+    //display: block;
+  }
+}
+
+.four04__main2 {
+  width: 100vw !important;
+}
+.four04__return {
+  position: relative;
+  input {
+    position: relative;
+  }
+  img {
+  }
+}
+
+.four04__search {
+  input {
+    position: inherit;
+    margin-top: 20px;
+  }
+}
+
+.animate {
+  animation: spin 10s linear infinite;
+
+}
+
+.widget {
+  text-align: center;
+  li {
+    text-align: center;
+    list-style: none;
+  }
+}
+
+.widget.widget_recent_entries, .widget.widget_categories {
+    //width: 35%;
+    float: left;
+    clear: right;
+}
+
+.widget.widget_archive {
+    height: 500px;
+}
+
+
+//Move me to keyframes page
+
+@keyframes spin {
+ from{
+ transform: rotateY(0deg);
+ moz-transform: rotateY(0deg); //Firefox
+ ms-transform: rotateY(0deg); //Microsoft Browsers
+ }
+ to{
+ transform: rotateY(360deg);
+ moz-transform: rotateY(360deg); //Firefox
+ ms-transform: rotateY(360deg); //Microsoft Browsers
+ }
+}

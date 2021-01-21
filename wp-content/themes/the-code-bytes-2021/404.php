@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 get_header();

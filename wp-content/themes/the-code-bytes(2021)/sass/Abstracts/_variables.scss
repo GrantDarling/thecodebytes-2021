@@ -1,0 +1,43 @@
+/*-----------------------------------------------------------------------------
+# GLOBAL VARIABLES
+-----------------------------------------------------------------------------*/
+
+// Header
+$header__top-bar-height: 160px; //Variable changed after breakpoint in mixin file!
+
+// Site colors
+$accent-color-1: #E88E80;
+$accent-color-2: #D4EAE6;
+$black: black;
+$white: white;
+$text-color: #464646;
+
+// Text Font Stacks 
+$primary-stack:'Teko', 'Open Sans',  sans-serif !default;
+$secondary-stack:'Lato', 'Roboto', sans-serif !default;
+$accent-stack:'manaspaceregular', 'Press Start 2P', sans-serif !default;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+// Link Colors 
+$link: $accent-color-1;
+$hover: shade($accent-color-2, 10%);
+$visited: shade($accent-color-2, 40%);
+$active: $accent-color-1;
+
+// General Max & Min Widths
+$max-width: 1180px !default;
+$min-width: 270px !default;
+
+// Breakpoints
+$breakpoints: (
+  'vsmall': 280px,
+  'small': 350px,
+  'small-medium': 500px,
+  'medium': 768px,
+  'medium-large': 900px,
+  'large': 1024px,
+  'vlarge': 1500px,
+) !default;
+
+// Global Misc Variables
+$sidebar-width: 15%;

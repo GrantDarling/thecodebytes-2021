@@ -1,0 +1,404 @@
+/*-----------------------------------------------------------------------------
+# HEADER
+-----------------------------------------------------------------------------*/
+/*================ General ================*/
+.site-description,
+.site-title {
+  @include hide-visually;
+}
+//Searchbar styling
+
+.search-field,
+.search-submit,
+.search-title,
+span.screen-reader-text {
+  display: none;
+}
+input.search-field {
+  display: none;
+}
+input.search-field {
+
+}
+
+.header__top-bar {
+  background: url("http://thecodebytes.local/wp-content/uploads/2020/05/top-nav-background.svg"), #312c2c;
+}
+//Styling for logo In Header
+
+a.custom-logo-link {
+  margin: auto;
+
+  img.custom-logo {
+    height: 205px;
+    width: auto;
+  }
+}
+//Basic Styling for all 3 headers
+
+.header__navbar-banner-container {}
+
+.header__banner-bar,
+.header__nav-bar,
+.header__top-bar {
+  height: 50px;
+}
+
+.header__nav-bar {
+  background: $black;
+}
+
+.header__banner-bar {
+  background: $accent-color-1;
+  height: 28px;
+  z-index: 9;
+  position: relative;
+}
+
+#banner__close {
+  position: relative;
+  border-radius: 60%;
+  font-family: $accent-stack;
+  color: $accent-color-2;
+  background: $text-color;
+  margin: auto 5px auto auto;
+  border: none;
+  height: 20px;
+  width: 20px;
+  font-size: 14px;
+  padding-top: 4px;
+  margin-top: -24px;
+}
+
+.sticky {
+  animation: banner-ani 0.2s forwards;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  #banner__close {}
+}
+
+.sticky2 {
+  position: fixed !important;
+  top: 0;
+}
+
+.sticky3 {
+  //position: fixed !important;
+  animation: sticky3 0.5s forwards;
+}
+
+.sticky3-anti {
+  //position: fixed !important;
+  animation: anti-sticky3 0.5s forwards;
+}
+
+@keyframes sticky3 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 45px;
+  }
+}
+
+@keyframes anti-sticky3 {
+  0% {
+    top: 45px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes banner-ani{
+  0% {
+    margin-top: -28px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+.close-sticky {
+  animation: banner-anti-ani 1s forwards;
+}
+
+@keyframes banner-anti-ani{
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    //margin-top: -28px;
+    //position: inherit;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#menu-item-69,
+#menu-item-70 {
+  display: none;
+}
+
+.header__top-bar {
+  height: $header__top-bar-height;
+  position: relative;
+  z-index: 9999;
+}
+
+.menu-banner-menu-container {
+  width: 100%;
+  margin: 2px 0;
+}
+
+.header__banner-menu {
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+
+  li {}
+
+  a {
+    color: $white;
+    font-family: $primary-stack;
+    text-decoration: none;
+    padding: 0 5px;
+    margin: 0 25px;
+    font-size: 1.8rem;
+  }
+}
+//Basic Styling for top bar icons
+
+.header__icon {
+  @include position(absolute, 10px 10px null null);
+  height: 40px;
+  width: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#header__mobile-menu {
+  font-family: $accent-stack;
+  margin-left: 10px;
+  z-index: 9;
+  padding: 7px 16px 5px;
+  border-radius: 7px;
+  height: auto;
+  background: $black;
+  color: tint($accent-color-1, 40%);
+  text-transform: capitalize;
+  border: solid 1px $text-color;
+  font-size: 1.5rem;
+
+  &:hover {
+    border: solid 1px tint($accent-color-1, 40%);
+  }
+
+  &:active {
+    color: $accent-color-1;
+    border: solid 1px $accent-color-1;
+  }
+}
+//navbar
+
+.menu-main-nav-container {
+  width: 100%;
+  z-index: 8;
+}
+
+#primary-menu {
+  background: $black;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border: solid 1px;
+    @include border-color(null null $accent-color-1 null);
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: $accent-stack;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $accent-color-2;
+    }
+  }
+}
+//Animations
+
+.header__mobile-dropdown {
+  animation: mobile-dropdown 1s forwards;
+  overflow-y: scroll;
+  width: 100vw;
+  z-index: 10;
+}
+
+.header__li-dropdown-ani {
+  animation: li-dropdown 1s forwards;
+}
+
+.header__mobile-pullup {
+  animation: mobile-pullup 1s forwards; //Anti Animations
+}
+
+.header__li-pullup-ani {
+  animation: li-pullup 1s forwards;
+}
+//Background for top bar icons
+
+
+.header__banner-closed {
+  animation: fade-close-banner 1s forwards;
+}
+#header__icon1 {
+  background: url("http://thecodebytes.local/wp-content/uploads/2020/05/medium-icon.svg") no-repeat center/contain;
+
+  &:hover {
+    background: url("http://thecodebytes.local/wp-content/uploads/2020/05/medium-icon-active.svg") no-repeat center/contain;
+  }
+}
+
+#header__icon2 {
+  top: 60px;
+  background: url("http://thecodebytes.local/wp-content/uploads/2020/05/developer-icon.svg") no-repeat center/contain;
+
+  &:hover {
+    background: url("http://thecodebytes.local/wp-content/uploads/2020/05/developer-icon-active.svg") no-repeat center/contain;
+  }
+}
+
+#header__icon3 {
+  top: 110px;
+  background: url("http://thecodebytes.local/wp-content/uploads/2020/05/contact-icon.svg") no-repeat center/contain;
+
+  &:hover {
+    background: url("http://thecodebytes.local/wp-content/uploads/2020/05/contact-icon-active.svg") no-repeat center/contain;
+  }
+}
+/*================ Mobile ================*/
+#header__mobile-menu {
+  //display: none;
+}
+/*================ Tablet ================*/
+@include respond-to('medium') {
+  .search-field {
+    display: block;
+  }
+
+  .site-description {
+    @include hide-visually("unhide");
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    font-family: $primary-stack;
+    color: tint($accent-color-1, 70%);
+    font-size: 18px;
+  }
+
+  .header__top-bar {
+    height: 120px;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .header__icon {
+    position: absolute;
+    display: inline-block;
+    top: initial;
+    left: initial;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  #header__icon2,
+  #header__icon3 {
+    top: initial;
+  }
+
+  #header__icon2 {
+    right: 70px;
+  }
+
+  #header__icon1 {
+    right: 120px;
+  }
+
+  #header__mobile-menu {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  #menu-item-69,
+  #menu-item-70 {
+    display: block;
+  }
+
+  a.custom-logo-link {
+    margin: 0;
+  }
+
+  a.custom-logo-link img.custom-logo {
+    height: 140px;
+    width: auto;
+    margin-bottom: -45px;
+    z-index: 999;
+    position: relative;
+  }
+
+  .menu-main-nav-container {
+    margin: auto 10%;
+  }
+}
+@include respond-to('medium-large') {
+  input.search-field {
+    display: block;
+    position: absolute;
+    right: 175px;
+    width: 132px;
+    bottom: 14px;
+    background: black;
+    border: solid 1px grey;
+    height: 25px;
+    font-size: 1.5rem;
+    padding: 5px;
+    color: white;
+    &::placeholder {
+      color: shade($white, 20%);
+    }
+  }
+
+  #primary-menu {
+    margin: auto;
+
+    li {
+      width: auto;
+      margin: auto;
+      border: none;
+    }
+  }
+
+  #header__mobile-menu {
+    display: none;
+  }
+}
+
+@include respond-to('vlarge') {
+  //padding: 0 15%;
+}

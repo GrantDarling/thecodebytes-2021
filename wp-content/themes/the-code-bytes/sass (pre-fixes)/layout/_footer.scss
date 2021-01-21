@@ -1,0 +1,83 @@
+/*-----------------------------------------------------------------------------
+# FOOTER
+-----------------------------------------------------------------------------*/
+footer {
+  background: $black;
+  color: tint($accent-color-1, 80%);
+}
+
+.footer__main {
+  margin: 0;
+  max-width: 1200px;
+margin: auto;
+}
+
+input.tnp-email {
+  background: black !important;
+  color: tint($accent-color-1, 80%) !important;
+  font-family: $accent-stack;
+}
+
+.cfw-widget {
+  margin: 20px 65px;
+}
+
+.tnp-widget-minimal input.tnp-submit {
+  color: $text-color !important;
+  background: tint($accent-color-1, 40%) !important;
+  border: 3px solid $white !important;
+  font-size: 24px !important;
+  padding: 0 !important;
+  margin-top: 5px !important;
+}
+
+.footer__logo {
+  width: 70%;
+}
+
+.footer__site-info {
+  margin: 0;
+  background: url("http://thecodebytes.local/wp-content/uploads/2020/05/top-nav-background.svg"), #312c2c;
+}
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: $white;
+  font-family: $primary-stack;
+  margin: 1.3rem 0;
+
+  a {
+    font-size: 1.7rem;
+    font-family: $primary-stack;
+    color: tint($accent-color-1, 40%) !important;
+  }
+}
+
+.footer__disclaimer-h1 {
+  font-family: $accent-stack;
+}
+
+.footer__disclaimer-p {
+  font-family: $primary-stack;
+  margin: 0 20px;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.footer__icon {
+  display: none;
+  bottom: -18px;
+}
+@include respond-to('medium') {
+  .footer__icon {
+    display: block;
+  }
+
+  .footer__copyright {
+    font-size: 18px;
+
+    a {
+      font-size: 20px;
+    }
+  }
+}

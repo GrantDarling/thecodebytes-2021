@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package TheCodeBytes2021
+ * @package The_Code_Bytes_2021
  */
 
 /**

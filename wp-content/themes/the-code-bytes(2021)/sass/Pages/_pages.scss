@@ -1,0 +1,65 @@
+/*-----------------------------------------------------------------------------
+# PAGES
+-----------------------------------------------------------------------------*/
+h1.entry-title {
+  text-align: left;
+  padding: 2rem 14rem 0;
+}
+
+footer.entry-footer {
+  margin-bottom: 50px !important;
+}
+
+.entry-content {
+  a {
+    margin: 15px 0;
+  }
+  div {
+    line-height: 2;
+  }
+  p {
+    line-height: 2;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .entry-content {
+    padding: 1rem 14rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .entry-content img,
+  .entry-title img,
+  footer.entry-footer img {
+    width: 80%;
+    margin: 15px 10%;
+  }
+  .entry-title {
+    padding: 2rem 14rem 0 !important;
+  }
+}
+
+/* NEWSLETTER */
+
+.tnp-subscription input.tnp-submit {
+  width: 100% !important;
+}
+
+.tnp-subscription {
+  text-align: left;
+  //margin: 0 !important;
+  form {
+    //margin-right: auto;
+  }
+}
+
+.tnp-field label {
+  font-size: 1.5rem !important;
+}
+
+.tnp-field-privacy {
+  label {
+    font-size: 1.1rem !important;
+  }
+}
