@@ -62,15 +62,18 @@
 			
 		// Check for active link
 		const currentURL = window.location.href;
-		let menuItems = document.querySelectorAll('.menu-item');
+		let navChildren = document.querySelectorAll('.menu-item');
 		
 		const displayActiveLink = () => {
-			menuItems.forEach((item) => {
-				let navAnchorURL = item.firstElementChild;
-				let parentNode = item;
 
-				if (navAnchorURL == currentURL) { 
-					// Transverse up from menuItem anchor tag
+			navChildren.forEach((navChild) => {
+				let navChildURL = navChild.firstElementChild;
+				let parentNode = navChild.parentElement;
+
+				if (navChildURL == currentURL) { 
+					navChild.classList.add('active');
+
+					// Transverse up from menuitem anchor tag
 					while(parentNode.tagName != 'NAV' || parentNode.tagName != 'BODY') {
 						if(parentNode.tagName == 'LI') { parentNode.classList.add('active'); }
 						parentNode = parentNode.parentElement
@@ -83,4 +86,5 @@
 
 		</script>
 	</header>
+	<div class="masthead-shim"></div>
 	<!-- #masthead -->

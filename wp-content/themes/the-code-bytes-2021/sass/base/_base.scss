@@ -15,3 +15,9 @@ body {
 main {
   background-color: $white;
 }
+
+.entry-content,
+.page-title {
+  padding-top: 80px;
+  margin: 0;
+}

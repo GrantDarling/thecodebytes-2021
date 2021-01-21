@@ -21,3 +21,14 @@ $normal: 400;
 
 // Header
 $header-bg-color: $white-alabaster;
+
+// Media Query Breakpoints
+$breakpoints: (
+  'x-small': 400px,
+  'small': 375px,
+  'small-medium': 560px,
+  'medium': 767px,
+  'medium-large': 992px,
+  'large': 1248px,
+  'x-large': 1440px
+);

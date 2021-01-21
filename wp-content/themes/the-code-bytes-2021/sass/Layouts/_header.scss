@@ -1,21 +1,23 @@
 /* Header */
 
-// Header Div
+/* MOBILE */
+
 #masthead {
-  position: fixed;
-  display: flex;
-  background: $header-bg-color;
-  height: 60px;
-  width: 100%;
-  box-shadow: 5px -1px 13px #d3d2d2;
+  position: absolute;
+  top: 200px;
 }
 
-// Logo
-.custom-logo {
-  width: 150px;
-  height: auto;
-  margin: 7px 0 0 20px;
+.masthead-shim {
+  height: 0;
+  width: 0;
 }
+
+.custom-logo {
+  @include position(absolute, -150px 0 null 0);
+  @include margin(null auto);
+}
+
+// Header Div
 
 /* Navigation */
 
@@ -36,6 +38,11 @@
   align-items: center;
   width: 100%;
   justify-content: flex-end;
+  //display: none; // !!! Remove me
+
+  a {
+    font-size: 18px;
+  }
 
   // Search Form
   #search-form {
@@ -75,7 +82,7 @@
     height: 100%;
 
     ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 4px 3px 9px #d3d2d2;
       float: left;
       position: absolute;
       top: 100%;
@@ -103,6 +110,8 @@
     li:hover > ul,
     li.focus > ul {
       left: auto;
+      padding: 15px;
+      padding-top: 35px;
     }
   }
 
@@ -122,7 +131,31 @@
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@include media('medium') {
+  #masthead {
+    position: fixed;
+    display: flex;
+    background: $header-bg-color;
+    height: 60px;
+    width: 100%;
+    box-shadow: 5px -1px 13px #d3d2d2;
+  }
+
+  .masthead-shim {
+    height: 60px;
+    width: 100%;
+  }
+
+  // Logo
+  .custom-logo {
+    position: inherit;
+    width: 150px;
+    height: auto;
+    margin: 7px 0 0 20px;
+  }
+}
+
+@include media('medium') {
   .menu-toggle {
     display: none;
   }
@@ -152,3 +185,13 @@
     flex: 1 0 50%;
   }
 }
+
+@include media('medium-large', max) {
+  .main-navigation {
+    a {
+      font-size: 12px;
+    }
+  }
+}
+
+// Mobile changes

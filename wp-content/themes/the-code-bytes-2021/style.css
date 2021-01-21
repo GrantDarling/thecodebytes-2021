@@ -28,7 +28,36 @@ main {
   height: 150vh;
 }
 
+/* VENDORS */
 /* Abstract */
+/* Mixins */
+/**
+ * SCSS
+ * 
+ * .example {
+ * @include media(566px) {
+ *    font-size: 24px;
+ * }
+ * 
+ * @include mq("x-small") {
+ *    font-size: 24px;
+ * }
+*/
+/**
+ * CONVERTED TO > CSS
+ * 
+ * @media only screen and (min-width: 566px) {
+ *    .example {
+ *       font-size: 24px;
+ *    }
+ * }
+
+ * @media only screen and (min-width: 400px) {
+ *    .example {
+ *       font-size: 24px;
+ *    }
+ * }
+*/
 @font-face {
   font-family: "OCRA";
   src: url("fonts/OCRA.woff2") format("woff2"), url("fonts/OCRA.woff") format("woff"), url("fonts/OCRA.ttf") format("truetype");
@@ -91,6 +120,12 @@ body {
 
 main {
   background-color: #ffffff;
+}
+
+.entry-content,
+.page-title {
+  padding-top: 80px;
+  margin: 0;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -404,19 +439,24 @@ template {
 
 /* Layout */
 /* Header */
+/* MOBILE */
 #masthead {
-  position: fixed;
-  display: flex;
-  background: #fafafa;
-  height: 60px;
-  width: 100%;
-  box-shadow: 5px -1px 13px #d3d2d2;
+  position: absolute;
+  top: 200px;
+}
+
+.masthead-shim {
+  height: 0;
+  width: 0;
 }
 
 .custom-logo {
-  width: 150px;
-  height: auto;
-  margin: 7px 0 0 20px;
+  position: absolute;
+  top: -150px;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Navigation */
@@ -433,6 +473,9 @@ template {
   align-items: center;
   width: 100%;
   justify-content: flex-end;
+}
+.main-navigation a {
+  font-size: 18px;
 }
 .main-navigation #search-form {
   font-family: "OCRA", sans-serif;
@@ -466,7 +509,7 @@ template {
   height: 100%;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 3px 9px #d3d2d2;
   float: left;
   position: absolute;
   top: 100%;
@@ -487,6 +530,8 @@ template {
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
+  padding: 15px;
+  padding-top: 35px;
 }
 .main-navigation li {
   position: relative;
@@ -501,7 +546,29 @@ template {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media only screen and (min-width: 767px) {
+  #masthead {
+    position: fixed;
+    display: flex;
+    background: #fafafa;
+    height: 60px;
+    width: 100%;
+    box-shadow: 5px -1px 13px #d3d2d2;
+  }
+
+  .masthead-shim {
+    height: 60px;
+    width: 100%;
+  }
+
+  .custom-logo {
+    position: inherit;
+    width: 150px;
+    height: auto;
+    margin: 7px 0 0 20px;
+  }
+}
+@media only screen and (min-width: 767px) {
   .menu-toggle {
     display: none;
   }
@@ -530,6 +597,12 @@ template {
 .post-navigation .nav-next {
   text-align: end;
   flex: 1 0 50%;
+}
+
+@media only screen and (max-width: 991px) {
+  .main-navigation a {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
