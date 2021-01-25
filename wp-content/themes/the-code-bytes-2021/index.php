@@ -17,38 +17,78 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+		<!-- Above The Fold -->
+		<section class="home__landing">
+			<div class="tagline">Keeping Code Cool <span>Since 2020.</span></div>
+			<div class="social-container">
+				<img src="" alt="Email" />
+				<img src="" alt="Medium" />
+			</div>
+			<div class="landing__container">
+			<h1 class="title-desktop">The Code Bytes</h1>
+			<!-- smooth scroll: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2 -->
+			<button>Top Articles</button>
+			<button>Code Resources</button>
+			<a href="#">What Is The Code Bytes?</a>
+			</div>
+		</section>
 
-			if ( is_home() && ! is_front_page() ) :
+		<div style="font-size: 30px;padding-top:150px;">HELLO WORLD. Add 'homepage' tags to thecodebytes.com</div>
+
+		<section class="home__section-2">
+			<div class="content-layout__container">
+				<!-- Move me to functions and use later -->
+				<?php 
+				echo'WHATS UP';
+				global $wpdb;
+				// this adds the prefix which is set by the user upon instillation of wordpress
+				//$table_name = $wpdb->prefix . "wp_posts";
+				// this will get the data from your table
+        		$retrieve_data = $wpdb->get_results( "SELECT * FROM wp_posts LIMIT 10");
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+				<ul>
+				<?php foreach ($retrieve_data as $retrieved_data){ ?>
+				<a href=<?php echo $retrieved_data->guid;?>>click me</a>
+				<div><?php echo $retrieved_data->post_content;?></div>
+				<?php 
+				}
+				?>
+				</ul>
 				<?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				// Move to functions.php?
+				function functionName($tagName) {
+					// Maybe leave the amount of posts open and have the promotional link follow. Have all other links show on load
+					// Make style background image inside html
+						$args = array(
+							'posts_per_page'  => 3,
+							'post_status' => 'publish',
+							'tag_slug__in' => $tagName,
+							'orderby' => 'meta_value_num',
+							'order' => 'ASC'
+						);
+						$the_query = new WP_Query($args); //http://codex.wordpress.org/Class_Reference/WP_Query
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+						//the loop
+						if($the_query->have_posts()) {
+							while ( $the_query->have_posts() ){
+								$the_query->the_post();
+								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
 
-			endwhile;
+								echo '<a href="' . get_permalink() . '"><div style="background-image: url( ' . $featured_img_url . ');">' . get_the_title() . '</div></a>';
+							}
+						}
 
-			the_posts_navigation();
+					}
+				functionName('homepage');
+				functionName('');
+				?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+			</div>
+			<div class="promotional__container">
+					Promotional Content here
+			</div>
+		</section>
 
 	</main><!-- #main -->
 

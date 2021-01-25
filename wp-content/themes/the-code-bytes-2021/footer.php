@@ -12,23 +12,19 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'the-code-bytes-2021' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'the-code-bytes-2021' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'the-code-bytes-2021' ), 'the-code-bytes-2021', '<a href="https://www.grantdarling.com">Grant Darling</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		<section class="footer-sections">
+		<div id="footer-section-1">Div 1</div>
+		<div id="footer-section-2">Div 2</div>
+		<div id="footer-section-3">Div 3</div>
+		</section>
+		<section class="footer-bottom">Copyright : Developer</section>
+	</footer>
+	<script type="text/javascript" src="js/scripts.js"></script>
+<?php
+wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/scripts.js');
+wp_footer();
+?>
 
-<?php wp_footer(); ?>
 
 </body>
 </html>

@@ -3,9 +3,9 @@
 // TO BE REMOVED
 section#recent-posts-3,
 div#ss-floating-bar,
-footer#colophon,
 a.post-edit-link,
-.entry-title {
+.entry-title,
+#wpadminbar {
   display: none;
 }
 
@@ -28,3 +28,4 @@ main {
 
 /* Layout */
 @import 'Layouts/header';
+@import 'Layouts/footer';

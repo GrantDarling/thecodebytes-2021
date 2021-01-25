@@ -1,25 +1,121 @@
-/* Header */
+/* General */
 
-/* MOBILE */
+// Headers
+#masthead,
+.navigation-header {
+  @include box(100%, $HEADER__menu-height);
+}
 
 #masthead {
-  position: absolute;
-  top: 200px;
+  @include position(absolute, $HEADER__mobile-menu-top null null null);
 }
 
-.masthead-shim {
-  height: 0;
-  width: 0;
+// Inner Header Container
+#header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: $max-width;
 }
 
+#primary-menu {
+  padding: 0;
+}
+
+// Logo
 .custom-logo {
   @include position(absolute, -150px 0 null 0);
   @include margin(null auto);
+  @include box(150px, auto);
+  z-index: 1;
 }
 
-// Header Div
+// Search Form
 
-/* Navigation */
+.main-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    height: 100%;
+
+    ul {
+      @include position(relative, 100% null null -999em);
+      float: left;
+      z-index: 99999;
+
+      ul {
+        @include position(relative, 0 -999em null null);
+      }
+
+      li {
+        &:hover > ul,
+        &.focus > ul {
+          display: inline-block;
+          left: auto;
+        }
+      }
+    }
+
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+      padding: 15px;
+      padding-top: 25px;
+      position: absolute;
+      width: 70vw;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  li {
+    position: relative;
+  }
+
+  a {
+    font-family: $primary-font;
+    font-weight: $bold;
+    text-decoration: none;
+    display: block;
+  }
+
+  // Search Form
+  #search-form {
+    font-family: $accent-font;
+    height: 24px;
+    margin: 0 40px 0 0;
+
+    #s {
+      width: 200px;
+      font-size: 10px;
+      padding-top: 6px;
+      border: solid 1px $grey-dust;
+      background: $white;
+    }
+
+    #searchsubmit {
+      background: $white;
+      border: solid 1px $grey-dust;
+      border-left: none;
+      font-size: 14px;
+    }
+  }
+}
+
+// Navigation Container
+.menu-main-nav-container {
+  li {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
 
 .nav-menu {
   a {
@@ -32,115 +128,178 @@
   }
 }
 
-// Main Nav
-.main-navigation {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
-  //display: none; // !!! Remove me
+/* Mobile */
 
+// Mobile Site Title
+#mobile-title {
+  font-family: $accent-font;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+// Hamburger Menu
+.menu-toggle {
+  background: transparent;
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Search
+#search-form {
+  display: none;
+}
+
+// Mobile Hamburger Animation
+.bar {
+  @include box(35px, 5px);
+  @include margin(4px null);
+  border: 1px solid $black-mine-shaft;
+  transition: 0.5s;
+
+  $translate: 12px, -8px, -4px, -20px, -8px, 5px;
+
+  @for $i from 1 through 3 {
+    .toggled & {
+      &:nth-child(#{$i}) {
+        @include prefixer(
+          transform,
+          rotate(90deg) translate(nth($translate, $i), nth($translate, $i + 3)),
+          ('webkit', 'moz')
+        );
+      }
+    }
+  }
+}
+
+.main-navigation {
+  #mobile-title,
+  .menu-toggle {
+    @include margin(0 2em);
+  }
   a {
     font-size: 18px;
   }
 
-  // Search Form
-  #search-form {
-    font-family: $accent-font;
-    display: flex;
-    height: 24px;
-
-    #s {
-      width: 125px;
-      font-size: 10px;
-      padding-top: 6px;
-    }
-
-    #searchsubmit {
-      background: none;
-      border: solid 1px #9b9999;
-      border-left: none;
-      font-size: 14px;
-    }
-  }
-
-  #search-form,
-  .menu-main-nav-container li {
-    margin: 0 40px 0 0;
-  }
-
-  a {
-    font-family: $primary-font;
-    font-weight: $bold;
-  }
-
   ul {
     display: none;
-    list-style: none;
+  }
+}
+
+// Toggled Navigation
+.main-navigation.toggled {
+  @include position(fixed, 0 0 0 0);
+  @include box(100%, 100vh);
+  background: $white;
+  z-index: 999999;
+
+  &,
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  ul li {
     margin: 0;
-    padding-left: 0;
-    height: 100%;
+    padding-bottom: 20px;
+    width: 100%;
+    display: block;
+  }
 
-    ul {
-      box-shadow: 4px 3px 9px #d3d2d2;
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999;
+  // Secondary Menu
+  .sub-menu {
+    height: 0; //15vh
 
-      ul {
-        left: -999em;
-        top: 0;
-      }
-
-      li {
-        &:hover > ul,
-        &.focus > ul {
-          display: block;
-          left: auto;
-        }
-      }
-
-      a {
-        width: 200px;
-      }
-    }
-
-    li:hover > ul,
-    li.focus > ul {
-      left: auto;
-      padding: 15px;
-      padding-top: 35px;
+    li {
+      display: none;
     }
   }
 
-  li {
+  .focus .sub-menu {
     position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    height: 17vh;
+    margin-top: 10px;
+    padding: 10px 0;
+    background: $white;
+    box-shadow: inset 0px 11px 8px -10px #ccc, inset 0px -4px 8px -3px #ccc;
+
+    li {
+      display: flex;
+      height: 35px;
+      align-items: center;
+    }
+
+    // Force scrollbar
+    &::-webkit {
+      &-scrollbar {
+        width: 5px;
+      }
+      &-track {
+        background: #f3f3f3;
+      }
+      &-scrollbar-thumb {
+        background: $black-mine-shaft;
+      }
+    }
   }
 
   a {
-    display: block;
-    text-decoration: none;
-  }
-}
-
-// Small menu
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
-@include media('medium') {
-  #masthead {
-    position: fixed;
-    display: flex;
-    background: $header-bg-color;
-    height: 60px;
     width: 100%;
-    box-shadow: 5px -1px 13px #d3d2d2;
+    text-align: center;
   }
 
+  #search-form {
+    display: flex;
+    justify-content: center;
+    order: -1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .menu-main-nav-container {
+    @include box(100%, 50%);
+    margin-bottom: 40%;
+  }
+}
+
+// Navigation Header Container
+.navigation-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $header-bg-color;
+  box-shadow: 5px -1px 13px $header-shadow;
+  z-index: 1000;
+}
+
+/* Tablet & Desktop */
+
+@include media('medium-large') {
+  // Mobile Title, Hamburger Menu &  Navigation Container
+  #mobile-title,
+  .menu-toggle,
+  .navigation-container,
+  .navigation-header {
+    display: none;
+  }
+
+  // Header Container
+  #masthead {
+    @include position(fixed, auto null null null);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $header-bg-color;
+    box-shadow: 5px -1px 13px $header-shadow;
+    z-index: 1;
+  }
+
+  // Header shim
   .masthead-shim {
     height: 60px;
     width: 100%;
@@ -149,49 +308,69 @@
   // Logo
   .custom-logo {
     position: inherit;
-    width: 150px;
-    height: auto;
-    margin: 7px 0 0 20px;
-  }
-}
-
-@include media('medium') {
-  .menu-toggle {
-    display: none;
+    margin: 80px 0 0 20px;
   }
 
-  .main-navigation ul {
-    display: flex;
-  }
-}
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-  .site-main & {
-    margin: 0 0 1.5em;
-  }
-
-  .nav-links {
-    display: flex;
-  }
-
-  .nav-previous {
-    flex: 1 0 50%;
-  }
-
-  .nav-next {
-    text-align: end;
-    flex: 1 0 50%;
-  }
-}
-
-@include media('medium-large', max) {
+  // Navigation
   .main-navigation {
     a {
-      font-size: 12px;
+      font-size: 18px;
+    }
+
+    ul {
+      display: flex;
+
+      ul {
+        position: absolute;
+      }
+    }
+
+    ul {
+      li:hover > ul,
+      li.focus > ul {
+        left: 0;
+      }
+    }
+
+    // Search
+    #search-form {
+      display: flex;
+
+      #s {
+        width: 120px;
+      }
+    }
+  }
+
+  .menu-main-nav-container {
+    width: 100%;
+  }
+
+  .sub-menu {
+    li {
+      width: 50%;
+      display: flex;
+      float: left;
+      height: 60px;
+      align-self: center;
+      justify-self: center;
+      background: $header-bg-color;
+
+      a {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      &:last-child {
+        width: 100%;
+        box-shadow: 0 27px 16px #d3d2d22b;
+      }
+
+      &:hover {
+        background: $white;
+      }
     }
   }
 }
-
-// Mobile changes

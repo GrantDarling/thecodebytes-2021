@@ -26,39 +26,64 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-code-bytes-2021' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="header-container">
+			<div class="site-branding">
 				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				the_custom_logo();
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
+				$the_code_bytes_2021_description = get_bloginfo( 'description', 'display' );
+				if ( $the_code_bytes_2021_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $the_code_bytes_2021_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
+			
+			<nav id="site-navigation" class="main-navigation">
+				<div class="navigation-header">
+				<h1 id="mobile-title" aria-controls="primary-menu">THE CODE BYTES</h1>
+				<button class="menu-toggle" aria-expanded="false">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</button>
+				</div>
 				<?php
-			endif;
-			$the_code_bytes_2021_description = get_bloginfo( 'description', 'display' );
-			if ( $the_code_bytes_2021_description || is_customize_preview() ) :
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				// Search bar 
+				get_search_form();
 				?>
-				<p class="site-description"><?php echo $the_code_bytes_2021_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'the-code-bytes-2021' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			// Search bar 
-			get_search_form();
-			?>
-		</nav><!-- #site-navigation -->
+			</nav><!-- #site-navigation -->
+		</div>
 		<script>
+		const toggleMenu = document.querySelector('.menu-toggle')
+
+		// Disable scroll 
+		const disableScroll = () => {
+			const toggleMenuOpen = toggleMenu.getAttribute('aria-expanded');
+
+			if(toggleMenuOpen == 'false') {
+				return document.body.style.overflow="hidden"
+			} 
+			
+			return document.body.style.overflow="visible"
+		}
+
+		toggleMenu.addEventListener("click", disableScroll);
+
+
 			
 		// Check for active link
 		const currentURL = window.location.href;
@@ -83,7 +108,6 @@
 		};
 
 		displayActiveLink();
-
 		</script>
 	</header>
 	<div class="masthead-shim"></div>
