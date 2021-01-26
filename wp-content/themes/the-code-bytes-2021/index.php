@@ -19,26 +19,35 @@ get_header();
 
 		<!-- Above The Fold -->
 		<section class="home__landing">
-			<div class="tagline">Keeping Code Cool <span>Since 2020.</span></div>
-			<div class="social-container">
-				<img src="" alt="Email" />
-				<img src="" alt="Medium" />
+			<div class="landing__banner">
+				<div class="tagline">Keeping Code Cool <span>Since 2020.</span></div>
+				<div class="social-container">
+					<a target="_blank" href="mailto:grantcarterdarling@gmail.com?subject=The Code Bytes Inquiry"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/email-me.svg" alt="Medium" /></a>
+					<a target="_blank" href="https://developer-13376.medium.com/"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/Medium-Logo.svg" alt="Email" /></a>
+				</div>
 			</div>
 			<div class="landing__container">
-			<h1 class="title-desktop">The Code Bytes</h1>
-			<!-- smooth scroll: https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2 -->
-			<button>Top Articles</button>
-			<button>Code Resources</button>
-			<a href="#">What Is The Code Bytes?</a>
+			<h1 class="landing__title-desktop">THE CODE BYTES</h1>
+			<div class="landing__buttons">
+				<a class="scroll" href="#top-articles"> <button id="landing__button--1">Top Articles</button></a>
+				<a class="scroll" href="#code-resources"><button id="landing__button--2">Code Resources</button></a>
+			</div>
+			<a class="landing__about" href="#">What is The Code Bytes?</a>
 			</div>
 		</section>
 
 		<div style="font-size: 30px;padding-top:150px;">HELLO WORLD. Add 'homepage' tags to thecodebytes.com</div>
 
-		<section class="home__section-2">
+		<section class="home__section-2" id="top-articles">
+			<h1>Top Articles</h1>
 			<div class="content-layout__container">
 				<!-- Move me to functions and use later -->
+				
 				<?php 
+				// 1. Table
+				// 2. SQL query 
+				// 3. ...
+				
 				echo'WHATS UP';
 				global $wpdb;
 				// this adds the prefix which is set by the user upon instillation of wordpress
@@ -48,7 +57,7 @@ get_header();
 				?>
 				<ul>
 				<?php foreach ($retrieve_data as $retrieved_data){ ?>
-				<a href=<?php echo $retrieved_data->guid;?>>click me</a>
+				<!-- <a href=<?php echo $retrieved_data->guid;?>><?php echo $retrieved_data->guid;?></a> -->
 				<div><?php echo $retrieved_data->post_content;?></div>
 				<?php 
 				}
@@ -89,6 +98,8 @@ get_header();
 					Promotional Content here
 			</div>
 		</section>
+
+		<section id="code-resources"></section>
 
 	</main><!-- #main -->
 

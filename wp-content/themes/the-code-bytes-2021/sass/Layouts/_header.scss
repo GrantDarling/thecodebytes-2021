@@ -141,6 +141,8 @@
 .menu-toggle {
   background: transparent;
   border: none;
+  @include box(40px);
+  box-shadow: none;
 
   &:focus {
     outline: 0;
@@ -225,7 +227,7 @@
     height: 17vh;
     margin-top: 10px;
     padding: 10px 0;
-    background: $white;
+    background: #f5f5f5;
     box-shadow: inset 0px 11px 8px -10px #ccc, inset 0px -4px 8px -3px #ccc;
 
     li {
@@ -297,12 +299,6 @@
     background: $header-bg-color;
     box-shadow: 5px -1px 13px $header-shadow;
     z-index: 1;
-  }
-
-  // Header shim
-  .masthead-shim {
-    height: 60px;
-    width: 100%;
   }
 
   // Logo

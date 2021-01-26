@@ -9,10 +9,6 @@ a.post-edit-link,
   display: none;
 }
 
-main {
-  height: 150vh;
-}
-
 /* VENDORS */
 @import 'Vendors/bourbon/bourbon';
 
@@ -29,3 +25,9 @@ main {
 /* Layout */
 @import 'Layouts/header';
 @import 'Layouts/footer';
+
+/* Components */
+@import 'Components/buttons';
+
+/* Pages */
+@import 'Pages/home';

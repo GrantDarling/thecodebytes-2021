@@ -1,3 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+main {
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -13,20 +23,23 @@ body {
 }
 
 main {
+  padding-top: ($header-padding);
   background-color: $white;
   position: relative;
   z-index: 0;
 }
 
 .entry-content,
-.page-title {
+.page-title,
+main {
   padding-top: 300px;
   margin: 0;
 }
 
 @include media('medium-large') {
   .entry-content,
-  .page-title {
+  .page-title,
+  main {
     padding-top: 100px;
     margin: 0;
   }
