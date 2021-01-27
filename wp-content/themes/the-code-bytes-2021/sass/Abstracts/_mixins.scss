@@ -18,6 +18,20 @@
   }
 }
 
+// Flex Center : @include flex-center();
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Flex Align : @include flex-align(flex-end, stretch);
+@mixin flex-align($horizontal, $vertical) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
 // Box shadows : @include box-shadow(5px 10px $black)
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;

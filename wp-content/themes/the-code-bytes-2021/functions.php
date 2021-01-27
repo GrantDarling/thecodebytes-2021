@@ -197,3 +197,44 @@ function rlv_search_form( $form ) {
     $form = str_replace( 'Search &hellip;', 'Search &hellip; Minimum 3 letters', $form );
     return $form;
 }
+
+/**
+ * getPostsByTag Function 
+ */
+
+function getArticlesByTag($tagName, $postsPerPage, $articleType) {
+		$args = array(
+			'posts_per_page'  => $postsPerPage,
+			'post_status' => 'publish',
+			'tag_slug__in' => $tagName,
+			'orderby' => 'meta_value_num',
+			'order' => 'DESC'
+		);
+		$the_query = new WP_Query($args); 
+
+		//the loop
+		if($the_query->have_posts()) {
+			while ( $the_query->have_posts() ){
+				$the_query->the_post();
+				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+
+				echo '<a class="categories__article" data-article=' . $articleType . ' href="' . get_permalink() . '"><div class="category__main" style="background: linear-gradient(158deg, rgb(14 14 14 / 71%) 0%, rgb(0 0 0) 100%),  url( ' . $featured_img_url . ') center center no-repeat;width: 100%; height: 100%;text-align: center;display: flex;
+    justify-content: center;
+    align-items: center;">' . get_the_title() . '</div><div class="category__footer">' . get_the_date() . '</div></a>';
+			}
+		}
+
+	}
+
+/**
+ * SQL Query
+ */
+
+	 
+function absoluteGarbageSQLQuery() {
+	global $wpdb;
+	$retrieve_data = $wpdb->get_results( "SELECT * FROM wp_posts LIMIT 10");
+	foreach ($retrieve_data as $retrieved_data){ 
+	echo '<div> ' . $retrieved_data->post_content . ' </div>';
+	}
+}

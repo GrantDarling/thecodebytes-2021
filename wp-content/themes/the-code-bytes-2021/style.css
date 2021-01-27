@@ -824,6 +824,9 @@ a button {
 }
 
 /* Pages */
+/*** 
+  Landing 
+  *************************************/
 /* General & Mobile */
 .tagline,
 .social-container,
@@ -835,18 +838,56 @@ a button {
 .landing__buttons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
 }
 
 .landing__container {
-  height: 40vh;
+  padding-top: 6vh;
+  height: 60vh;
   align-items: center;
 }
 .landing__container #landing__button--1,
 .landing__container #landing__button--2 {
+  position: relative;
   height: 60px;
   width: 225px;
   font-size: 22px;
+  cursor: pointer;
+  background: transparent;
+  transition: 1s ease-in-out;
+  outline: none;
+}
+.landing__container #landing__button--1 svg,
+.landing__container #landing__button--2 svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 102%;
+  height: 107%;
+  fill: none;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+.landing__container #landing__button--1 svg polyline,
+.landing__container #landing__button--2 svg polyline {
+  width: 100%;
+  height: 100%;
+}
+.landing__container #landing__button--1 span,
+.landing__container #landing__button--2 span {
+  color: black;
+  font-size: 18px;
+  font-weight: 100;
+}
+.landing__container #landing__button--1:hover,
+.landing__container #landing__button--2:hover {
+  transition: 1s ease-in-out;
+  background: transparent;
+}
+.landing__container #landing__button--1:hover svg,
+.landing__container #landing__button--2:hover svg {
+  stroke-dashoffset: -480;
 }
 .landing__container #landing__button--1 {
   margin-bottom: 15px;
@@ -870,12 +911,19 @@ a button {
     display: flex;
   }
 
+  .landing__container,
+.landing__buttons {
+    justify-content: center;
+  }
+
   .landing__banner {
+    display: flex;
     justify-content: space-between;
-    padding-top: 7vh;
+    align-items: flex-end;
+    padding-top: 6vh;
     margin-right: auto;
     margin-left: auto;
-    width: 100%;
+    width: 99%;
     max-width: 1500px;
   }
   .landing__banner .tagline {
@@ -913,6 +961,10 @@ a button {
     height: 45px;
     width: 150px;
   }
+  .landing__container #landing__button--1 svg,
+.landing__container #landing__button--2 svg {
+    stroke: #f89e86;
+  }
   .landing__container a #landing__button--1,
 .landing__container a #landing__button--2 {
     font-size: 16px;
@@ -920,6 +972,119 @@ a button {
   }
   .landing__container .landing__about {
     margin-top: 50px;
+  }
+}
+/*** 
+  Top Articles & Latest Articles
+  *************************************/
+.home__articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.home__articles-container .categories__article:nth-child(n+4) {
+  display: none;
+}
+.home__articles-container button {
+  padding: 0.5em;
+  width: 150px;
+  font-size: 18px;
+}
+
+.home__section-article {
+  max-width: 1500px;
+}
+.home__section-article h1 {
+  text-align: center;
+}
+
+.categories__article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  margin: 25px 25px 50px 25px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  border-radius: 4px;
+}
+.categories__article:hover {
+  box-shadow: none;
+}
+.categories__article:hover .category__main {
+  border: #f89e86 solid 2px;
+}
+.categories__article .category__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  font-size: 23px;
+  padding: 0 1em;
+}
+.categories__article .category__footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6012780112) 45%);
+  font-family: "OCRA", sans-serif;
+  font-size: 12px;
+  border-top: solid 1px #ffffff40;
+}
+
+@media only screen and (min-width: 767px) {
+  .home__section-article {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .home__section-article .promotional__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 49%;
+  }
+
+  .home__articles-container,
+.home__section-article h1 {
+    width: 50%;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  .home__articles-container .categories__article,
+.home__section-article h1 .categories__article {
+    margin: 10px 0 0 0;
+    border-radius: none;
+  }
+  .home__articles-container .categories__article:first-child,
+.home__section-article h1 .categories__article:first-child {
+    width: 100%;
+    height: 400px;
+  }
+  .home__articles-container .categories__article:nth-child(n+2),
+.home__section-article h1 .categories__article:nth-child(n+2) {
+    width: 48%;
+  }
+  .home__articles-container .category__main,
+.home__section-article h1 .category__main {
+    border-radius: 0;
+  }
+  .home__articles-container .home__buttons--section,
+.home__section-article h1 .home__buttons--section {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
   }
 }
 

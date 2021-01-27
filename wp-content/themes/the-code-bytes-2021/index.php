@@ -29,78 +29,57 @@ get_header();
 			<div class="landing__container">
 			<h1 class="landing__title-desktop">THE CODE BYTES</h1>
 			<div class="landing__buttons">
-				<a class="scroll" href="#top-articles"> <button id="landing__button--1">Top Articles</button></a>
-				<a class="scroll" href="#code-resources"><button id="landing__button--2">Code Resources</button></a>
+				<a class="scroll" href="#top-articles"> <button id="landing__button--1">
+					<svg width="180px" height="60px" preserveAspectRatio="none" class="border">
+					<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="bg-line" />
+					<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="hl-line" />
+					</svg>
+					<span>Top Articles</span>
+				</button></a>
+				<a class="scroll" href="#code-resources"><button id="landing__button--2">
+					<svg width="5080px" height="60px" preserveAspectRatio="none" class="border">
+					<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="bg-line" />
+					<polyline points="150,1 150,44.6 1,44.6 1,1 150,1"  preserveAspectRatio="none"class="hl-line" />
+					</svg>
+					<span>Code Resources</span>
+				</button></a>
 			</div>
 			<a class="landing__about" href="#">What is The Code Bytes?</a>
 			</div>
 		</section>
 
-		<div style="font-size: 30px;padding-top:150px;">HELLO WORLD. Add 'homepage' tags to thecodebytes.com</div>
-
-		<section class="home__section-2" id="top-articles">
+		<!-- Top Articles -->
+		<section class="home__section-article" id="top-articles">
 			<h1>Top Articles</h1>
-			<div class="content-layout__container">
-				<!-- Move me to functions and use later -->
-				
-				<?php 
-				// 1. Table
-				// 2. SQL query 
-				// 3. ...
-				
-				echo'WHATS UP';
-				global $wpdb;
-				// this adds the prefix which is set by the user upon instillation of wordpress
-				//$table_name = $wpdb->prefix . "wp_posts";
-				// this will get the data from your table
-        		$retrieve_data = $wpdb->get_results( "SELECT * FROM wp_posts LIMIT 10");
-				?>
-				<ul>
-				<?php foreach ($retrieve_data as $retrieved_data){ ?>
-				<!-- <a href=<?php echo $retrieved_data->guid;?>><?php echo $retrieved_data->guid;?></a> -->
-				<div><?php echo $retrieved_data->post_content;?></div>
-				<?php 
-				}
-				?>
-				</ul>
-				<?php
-
-				// Move to functions.php?
-				function functionName($tagName) {
-					// Maybe leave the amount of posts open and have the promotional link follow. Have all other links show on load
-					// Make style background image inside html
-						$args = array(
-							'posts_per_page'  => 3,
-							'post_status' => 'publish',
-							'tag_slug__in' => $tagName,
-							'orderby' => 'meta_value_num',
-							'order' => 'ASC'
-						);
-						$the_query = new WP_Query($args); //http://codex.wordpress.org/Class_Reference/WP_Query
-
-						//the loop
-						if($the_query->have_posts()) {
-							while ( $the_query->have_posts() ){
-								$the_query->the_post();
-								$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-
-								echo '<a href="' . get_permalink() . '"><div style="background-image: url( ' . $featured_img_url . ');">' . get_the_title() . '</div></a>';
-							}
-						}
-
-					}
-				functionName('homepage');
-				functionName('');
-				?>
-
+			<div class="home__articles-container">
+				<?php getArticlesByTag('homepage', 5, "top"); ?>
+				<div class="home__buttons--section">
+					<button data-article='top' class="browse-more">Browse More</button>
+					<a href="/category/archive/"><button>All Articles</button></a>
+				</div>
 			</div>
 			<div class="promotional__container">
-					Promotional Content here
+					Good old wholesome promotional content
 			</div>
 		</section>
 
+		<!-- Latest Articles -->
+		<section class="home__section-article" id="top-articles">
+			<h1>Latest Articles</h1>
+			<div class="home__articles-container">
+				<?php getArticlesByTag('', 5, "latest"); ?>
+				<div class="home__buttons--section">
+					<button data-article='latest' class="browse-more">Browse More</button>
+					<a href="/category/archive/"><button>All Articles</button></a>
+				</div>
+			</div>
+			<div class="promotional__container">
+					Good old wholesome promotional content
+			</div>
+		</section>
+		<div>
+		</div>
 		<section id="code-resources"></section>
-
 	</main><!-- #main -->
 
 <?php
