@@ -29,11 +29,9 @@ main {
   z-index: 0;
 }
 
-.entry-content,
-.page-title,
 main {
-  padding-top: 300px;
-  margin: 0;
+  padding-top: 360px;
+  padding-bottom: 50px;
 }
 
 @include media('medium-large') {

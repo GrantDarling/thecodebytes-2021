@@ -23,7 +23,7 @@ get_header();
 				<div class="tagline">Keeping Code Cool <span>Since 2020.</span></div>
 				<div class="social-container">
 					<a target="_blank" href="mailto:grantcarterdarling@gmail.com?subject=The Code Bytes Inquiry"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/email-me.svg" alt="Medium" /></a>
-					<a target="_blank" href="https://developer-13376.medium.com/"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/Medium-Logo.svg" alt="Email" /></a>
+					<a target="_blank" href="https://grantdarling.medium.com/"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/Medium-Logo.svg" alt="Email" /></a>
 				</div>
 			</div>
 			<div class="landing__container">
@@ -44,7 +44,7 @@ get_header();
 					<span>Code Resources</span>
 				</button></a>
 			</div>
-			<a class="landing__about" href="#">What is The Code Bytes?</a>
+			<a class="landing__about" href="#">Want to learn more?</a>
 			</div>
 		</section>
 
@@ -62,9 +62,10 @@ get_header();
 					Good old wholesome promotional content
 			</div>
 		</section>
-
+		<!-- Code Resources (Later) -->
+		<section class="home__buffer"></section>
 		<!-- Latest Articles -->
-		<section class="home__section-article" id="top-articles">
+		<section class="home__section-article" id="latest-articles">
 			<h1>Latest Articles</h1>
 			<div class="home__articles-container">
 				<?php getArticlesByTag('', 5, "latest"); ?>
