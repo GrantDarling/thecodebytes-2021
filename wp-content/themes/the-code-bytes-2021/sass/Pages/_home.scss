@@ -1,8 +1,10 @@
-/*** 
-  Landing 
-  *************************************/
+/********************
+      Home 
+*********************/
 
-/* General & Mobile */
+/* Landing */
+
+// General & Mobile
 
 .landing__tagline,
 .landing__socials,
@@ -12,76 +14,68 @@
 
 .landing__container,
 .landing__buttons {
-  display: flex;
+  @include flex-align(end, null);
   flex-direction: column;
-  justify-content: end;
 }
 
 .landing__container {
-  padding-bottom: 6vh;
+  @include flex-center();
+  @include padding(null null 6vh null);
   height: 60vh;
-  align-items: center;
-  justify-content: center;
+}
 
-  #landing__button--1,
-  #landing__button--2 {
-    position: relative;
-    height: 60px;
-    width: 225px;
-    font-size: 22px;
-    cursor: pointer;
-    background: transparent;
+#landing__button--1,
+#landing__button--2 {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  @include box(225px, 60px);
+  font-size: 22px;
+  background: transparent;
+  transition: 1s ease-in-out;
+  margin-bottom: 35px;
+
+  svg {
+    @include position(absolute, -2px null null -2px);
+    @include box(102%, 107%);
+    fill: none;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
     transition: 1s ease-in-out;
-    outline: none;
+  }
+
+  span {
+    color: $black;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  &:hover {
+    transition: 1s ease-in-out;
+    background: transparent;
 
     svg {
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: 102%;
-      height: 107%;
-      fill: none;
-      stroke-dasharray: 150 480;
-      stroke-dashoffset: 150;
-      transition: 1s ease-in-out;
-
-      polyline {
-        width: 100%;
-        height: 100%;
-      }
+      stroke-dashoffset: -480;
     }
-
-    span {
-      color: $black;
-      font-size: 18px;
-      font-weight: 100;
-    }
-
-    &:hover {
-      transition: 1s ease-in-out;
-      background: transparent;
-
-      svg {
-        stroke-dashoffset: -480;
-      }
-    }
-  }
-
-  #landing__button--1 {
-    margin-bottom: 15px;
-    border: solid 1px $orange-geraldine;
-  }
-
-  #landing__button--2 {
-    margin-bottom: 35px;
-  }
-
-  .landing__about {
-    font-family: $accent-font;
-    font-size: 12px;
-    color: $black-mine-shaft;
   }
 }
+
+#landing__button--1 {
+  border: solid 1px $orange-geraldine;
+}
+
+.landing__about {
+  font-family: $accent-font;
+  font-size: 12px;
+  color: $black-mine-shaft;
+}
+
+.code-resources__buffer {
+  width: 100%;
+  height: 20vh;
+}
+
+// Tablet & Desktop
 
 @include media('medium-large') {
   .landing__tagline,
@@ -115,8 +109,8 @@
 
     .landing__socials {
       justify-content: space-between;
-      width: 100px;
       padding-right: 50px;
+      width: 100px;
     }
   }
 
@@ -140,8 +134,7 @@
 
     #landing__button--1,
     #landing__button--2 {
-      height: 45px;
-      width: 150px;
+      @include box(150px, 45px);
 
       svg {
         stroke: $CB-ACCENT;
@@ -162,86 +155,43 @@
   }
 }
 
-.code-resources__buffer {
-  width: 100%;
-  height: 20vh;
-}
+/* Top Articles & Latest Articles*/
 
-/*** 
-  Top Articles & Latest Articles
-  *************************************/
+// General & Mobile
 
 .articles {
-  display: flex;
+  @include flex-align(space-around, null);
   flex-wrap: wrap;
-  justify-content: space-around;
 
   .categories__article:nth-child(n + 4) {
     display: none;
   }
 
   button {
+    font-size: 18px;
     padding: 0.5em;
     width: 150px;
-    font-size: 18px;
   }
 }
 
 .articles-promotions {
   max-width: $max-width;
+
   h1 {
     text-align: center;
   }
 }
 
-// !!! Move me to categories component
-.categories__article {
-  @include flex-center();
-  @include box(100%, 250px);
-  position: relative;
-  margin: 25px 25px 50px 25px;
-  text-decoration: none;
-  color: $white;
-  font-family: $primary-font;
-  font-weight: $bold;
-  border-radius: 4px;
-  box-shadow: 5px -1px 6px $header-shadow;
-
-  &:hover {
-    box-shadow: none;
-
-    .category__main {
-      border: $CB-ACCENT solid 4px;
-    }
-  }
-
-  .category__main {
-    @include flex-center();
-    @include box(100%);
-    border-radius: 3px;
-    font-size: 23px;
-    padding: 0 1em;
-  }
-
-  .category__footer {
-    @include position(absolute, null 0 0 0);
-    @include flex-center();
-    @include box(100%, 35px);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.6012780112044818) 45%
-    );
-    font-family: $accent-font;
-    font-size: 12px;
-    border-top: solid 1px #ffffff40;
-  }
-}
+// Tablet & Desktop
 
 @include media('medium-large') {
   .articles-promotions {
     display: flex;
     flex-wrap: wrap;
+
+    &#latest-articles {
+      flex-direction: row-reverse;
+    }
 
     .promotions {
       @include flex-center();
@@ -249,23 +199,18 @@
     }
   }
 
-  .articles-promotions#latest-articles {
-    flex-direction: row-reverse;
-  }
-
   .articles,
   .articles-promotions h1 {
-    width: 50%;
     justify-content: space-between;
     margin-left: 10px;
+    width: 50%;
 
     .categories__article {
       margin: 10px 0 0 0;
       border-radius: none;
 
       &:first-child {
-        width: 100%;
-        height: 400px;
+        @include box(100%, 400px);
 
         .category__main {
           font-size: 36px;
@@ -275,17 +220,16 @@
       &:nth-child(n + 2) {
         width: 48%;
       }
-    }
 
-    .category__main {
-      border-radius: 0;
-      // font-weight: normal;
-    }
+      .category__main {
+        border-radius: 0;
+      }
 
-    .articles__buttons {
-      margin-top: 30px;
-      width: 100%;
-      text-align: center;
+      .articles__buttons {
+        text-align: center;
+        margin-top: 30px;
+        width: 100%;
+      }
     }
   }
 }

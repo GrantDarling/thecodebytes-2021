@@ -36,8 +36,8 @@ get_header();
 				<a class="scroll" href="#top-articles"> 
 					<button id="landing__button--1">
 						<svg width="180px" height="60px" preserveAspectRatio="none" class="border">
-						<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="bg-line" />
-						<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="hl-line" />
+						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
+						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="hl-line" />
 						</svg>
 						<span>Top Articles</span>
 					</button>
@@ -45,8 +45,8 @@ get_header();
 				<a class="scroll" href="#code-resources">
 					<button id="landing__button--2">
 						<svg width="5080px" height="60px" preserveAspectRatio="none" class="border">
-						<polyline points="150,1 150,44.6 1,44.6 1,1 150,1" preserveAspectRatio="none" class="bg-line" />
-						<polyline points="150,1 150,44.6 1,44.6 1,1 150,1"  preserveAspectRatio="none"class="hl-line" />
+						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
+						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1"  preserveAspectRatio="none"class="hl-line" />
 						</svg>
 						<span>Code Resources</span>
 					</button>

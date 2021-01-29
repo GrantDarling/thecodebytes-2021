@@ -4,7 +4,7 @@ const toggleMenu = document.querySelector('.menu-toggle');
 const disableScroll = () => {
   const toggleMenuOpen = toggleMenu.getAttribute('aria-expanded');
 
-  if (toggleMenuOpen == 'false') {
+  if (toggleMenuOpen == 'true') {
     return (document.body.style.overflow = 'hidden');
   }
 
