@@ -230,7 +230,6 @@ function getArticlesByTag($tagName, $postsPerPage, $articleType) {
  * SQL Query
  */
 
-	 
 function absoluteGarbageSQLQuery() {
 	global $wpdb;
 	$retrieve_data = $wpdb->get_results( "SELECT * FROM wp_posts LIMIT 10");
@@ -238,3 +237,19 @@ function absoluteGarbageSQLQuery() {
 	echo '<div> ' . $retrieved_data->post_content . ' </div>';
 	}
 }
+
+/**
+ * Generic Newsletter 
+ */
+
+ function newsletter() {
+
+	 echo '<aside class="newsletter">';
+	 echo   '<header>';
+	 echo 		'<img src="http://thecodebytes2021.local/wp-content/uploads/2021/01/cropped-the-code-bytes-logo-small.png" />';
+	 echo   '</header>';
+	 echo 	'<h2> The Code Bytes Newsletter </h2>';
+	 echo 	'<p> Keep up to date. </p>';
+	 echo do_shortcode('[newsletter]');
+	 echo '</aside>';
+ }

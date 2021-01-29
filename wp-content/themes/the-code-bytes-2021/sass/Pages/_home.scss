@@ -207,6 +207,7 @@
 
     .promotions {
       @include flex-center();
+      align-items: flex-start;
       width: 49%;
     }
   }
@@ -247,9 +248,14 @@
 
   .articles__buttons {
     flex-direction: row;
+    margin: 5% 0;
 
     button {
       margin: 40px 10px 0;
+
+      &:hover {
+        border: solid 1px $orange-geraldine;
+      }
     }
   }
 }

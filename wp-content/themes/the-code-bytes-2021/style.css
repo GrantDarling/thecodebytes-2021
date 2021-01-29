@@ -779,7 +779,9 @@ main {
   }
 }
 /* Components */
-button {
+button,
+.button,
+.newsletter form .tnp-submit {
   background: #ffffff;
   border: solid 1px #9b9999;
   box-shadow: 0px 1px 8px #e3e3e3;
@@ -788,13 +790,104 @@ button {
   font-weight: 700;
   color: #343434;
 }
-a button {
+a button,
+a .button,
+a .newsletter form .tnp-submit,
+.newsletter form a .tnp-submit {
   font-size: 22px;
   font-family: "PT Sans", sans-serif;
   text-decoration: none;
   color: #343434;
 }
 
+.promotions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+}
+
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: solid 1px #e3e3e3;
+  width: 80%;
+  color: #1d1d1d;
+  padding: 0 0 30px 0;
+}
+.newsletter header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: solid 1px #e3e3e3;
+}
+.newsletter header img {
+  width: 60%;
+  height: 60%;
+  padding: 10px;
+}
+.newsletter h2,
+.newsletter p {
+  width: 100%;
+  text-align: center;
+}
+.newsletter p,
+.newsletter .tnp-field label {
+  font-family: "OCRA", sans-serif;
+}
+.newsletter input {
+  background-color: #ffffff;
+}
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.newsletter form input,
+.newsletter form .tnp-field {
+  width: 100%;
+  margin: 0 20%;
+  background-color: #ffffff !important;
+}
+.newsletter form input[type=email] {
+  height: 35px;
+  border: solid 1px #9b9999 !important;
+  font-family: "OCRA", sans-serif;
+}
+.newsletter form .tnp-privacy,
+.newsletter form .tnp-privacy-field {
+  margin: 0;
+}
+.newsletter form .tnp-privacy label,
+.newsletter form .tnp-privacy-field label {
+  width: 90%;
+}
+.newsletter form .tnp-submit {
+  font-size: 20px !important;
+  background: #ffffff !important;
+  color: #1d1d1d !important;
+  border: solid 1px #9b9999 !important;
+  margin: auto !important;
+  width: 100% !important;
+  box-shadow: 3px 1px 8px #e3e3e3 !important;
+}
+
+@media only screen and (min-width: 767px) {
+  .newsletter {
+    width: 50%;
+    position: sticky;
+    top: 125px;
+  }
+
+  .promotions {
+    margin-top: 0;
+  }
+}
 /* Pages */
 /********************
       Home 
@@ -994,6 +1087,7 @@ a button {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-items: flex-start;
     width: 49%;
   }
 
@@ -1034,9 +1128,13 @@ a button {
 
   .articles__buttons {
     flex-direction: row;
+    margin: 5% 0;
   }
   .articles__buttons button {
     margin: 40px 10px 0;
+  }
+  .articles__buttons button:hover {
+    border: solid 1px #f89e86;
   }
 }
 /* Category Page */

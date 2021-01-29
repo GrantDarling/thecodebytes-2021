@@ -61,7 +61,7 @@ get_header();
 				</div>
 			</div>
 			<div class="promotions">
-					Good old wholesome promotional content
+					<?php newsletter() ?>
 			</div>
 		</section>
 
