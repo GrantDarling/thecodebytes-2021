@@ -3,6 +3,28 @@
   position: relative;
   @include flex-center();
   margin-top: 8vh;
+
+  &__p {
+    color: #59c371;
+  }
+
+  &__button {
+    cursor: pointer;
+    font-size: 20px;
+    border: solid 1px #9b9999;
+    width: 50%;
+    height: 48px;
+    box-shadow: 3px 1px 8px #e3e3e3;
+
+    &:hover {
+      border: solid 1px $orange-geraldine;
+    }
+
+    button {
+      @include box(100%);
+      border: none;
+    }
+  }
 }
 
 .newsletter {
@@ -19,7 +41,7 @@
     border-bottom: solid 1px #e3e3e3;
 
     img {
-      @include box(60%);
+      @include box(40%);
       padding: 10px;
     }
   }
@@ -75,6 +97,10 @@
       margin: auto !important;
       width: 100% !important;
       box-shadow: 3px 1px 8px #e3e3e3 !important;
+
+      &:hover {
+        border: solid 1px $orange-geraldine !important;
+      }
     }
   }
 }

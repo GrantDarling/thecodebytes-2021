@@ -243,13 +243,5 @@ function absoluteGarbageSQLQuery() {
  */
 
  function newsletter() {
-
-	 echo '<aside class="newsletter">';
-	 echo   '<header>';
-	 echo 		'<img src="http://thecodebytes2021.local/wp-content/uploads/2021/01/cropped-the-code-bytes-logo-small.png" />';
-	 echo   '</header>';
-	 echo 	'<h2> The Code Bytes Newsletter </h2>';
-	 echo 	'<p> Keep up to date. </p>';
 	 echo do_shortcode('[newsletter]');
-	 echo '</aside>';
  }

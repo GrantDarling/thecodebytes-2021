@@ -61,7 +61,14 @@ get_header();
 				</div>
 			</div>
 			<div class="promotions">
-					<?php newsletter() ?>
+				<aside class="newsletter">
+					<header>
+						<img src="http://thecodebytes2021.local/wp-content/uploads/2021/01/cropped-the-code-bytes-logo-small.png" />
+					</header>
+					<h2> The Code Bytes Newsletter </h2>
+						<p> Keep up to date. </p>
+						<?php newsletter() ?>
+				</aside>
 			</div>
 		</section>
 
@@ -79,7 +86,14 @@ get_header();
 				</div>
 			</div>
 			<div class="promotions">
-					Good old wholesome promotional content
+				<aside class="newsletter">
+					<header>
+						<img src="https://thecodebytes.com/wp-content/uploads/2021/01/Digital-Ocean-Promo.png" />
+					</header>
+					<h2> Host with Digital Ocean </h2>
+						<p class="promotions__p"> $100 Free Credit </p>
+						<a class="promotions__button" target="_blank" href="https://m.do.co/c/398f3c7d3090"><button >Signup</button></a>
+				</aside>
 			</div>
 		</section>
 	</main><!-- #main -->
