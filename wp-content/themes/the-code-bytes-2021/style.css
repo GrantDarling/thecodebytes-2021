@@ -823,8 +823,8 @@ a button {
   Landing 
   *************************************/
 /* General & Mobile */
-.tagline,
-.social-container,
+.landing__tagline,
+.landing__socials,
 .landing__title-desktop {
   display: none;
 }
@@ -899,8 +899,8 @@ a button {
 }
 
 @media only screen and (min-width: 992px) {
-  .tagline,
-.social-container,
+  .landing__tagline,
+.landing__socials,
 .landing__banner,
 .landing__buttons,
 .landing__title-desktop {
@@ -921,15 +921,15 @@ a button {
     width: 99%;
     max-width: 1500px;
   }
-  .landing__banner .tagline {
+  .landing__banner .landing__tagline {
     font-family: "OCRA", sans-serif;
     font-size: 9.5px;
   }
-  .landing__banner .tagline span {
+  .landing__banner .landing__tagline span {
     padding-left: 5px;
     color: #f89e86;
   }
-  .landing__banner .social-container {
+  .landing__banner .landing__socials {
     justify-content: space-between;
     width: 100px;
     padding-right: 50px;
@@ -969,7 +969,7 @@ a button {
     margin-top: 50px;
   }
 }
-.home__buffer {
+.code-resources__buffer {
   width: 100%;
   height: 20vh;
 }
@@ -977,24 +977,24 @@ a button {
 /*** 
   Top Articles & Latest Articles
   *************************************/
-.home__articles-container {
+.articles {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.home__articles-container .categories__article:nth-child(n+4) {
+.articles .categories__article:nth-child(n+4) {
   display: none;
 }
-.home__articles-container button {
+.articles button {
   padding: 0.5em;
   width: 150px;
   font-size: 18px;
 }
 
-.home__section-article {
+.articles-promotions {
   max-width: 1500px;
 }
-.home__section-article h1 {
+.articles-promotions h1 {
   text-align: center;
 }
 
@@ -1046,51 +1046,51 @@ a button {
 }
 
 @media only screen and (min-width: 992px) {
-  .home__section-article {
+  .articles-promotions {
     display: flex;
     flex-wrap: wrap;
   }
-  .home__section-article .promotional__container {
+  .articles-promotions .promotions {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 49%;
   }
 
-  .home__section-article#latest-articles {
+  .articles-promotions#latest-articles {
     flex-direction: row-reverse;
   }
 
-  .home__articles-container,
-.home__section-article h1 {
+  .articles,
+.articles-promotions h1 {
     width: 50%;
     justify-content: space-between;
     margin-left: 10px;
   }
-  .home__articles-container .categories__article,
-.home__section-article h1 .categories__article {
+  .articles .categories__article,
+.articles-promotions h1 .categories__article {
     margin: 10px 0 0 0;
     border-radius: none;
   }
-  .home__articles-container .categories__article:first-child,
-.home__section-article h1 .categories__article:first-child {
+  .articles .categories__article:first-child,
+.articles-promotions h1 .categories__article:first-child {
     width: 100%;
     height: 400px;
   }
-  .home__articles-container .categories__article:first-child .category__main,
-.home__section-article h1 .categories__article:first-child .category__main {
+  .articles .categories__article:first-child .category__main,
+.articles-promotions h1 .categories__article:first-child .category__main {
     font-size: 36px;
   }
-  .home__articles-container .categories__article:nth-child(n+2),
-.home__section-article h1 .categories__article:nth-child(n+2) {
+  .articles .categories__article:nth-child(n+2),
+.articles-promotions h1 .categories__article:nth-child(n+2) {
     width: 48%;
   }
-  .home__articles-container .category__main,
-.home__section-article h1 .category__main {
+  .articles .category__main,
+.articles-promotions h1 .category__main {
     border-radius: 0;
   }
-  .home__articles-container .home__buttons--section,
-.home__section-article h1 .home__buttons--section {
+  .articles .articles__buttons,
+.articles-promotions h1 .articles__buttons {
     margin-top: 30px;
     width: 100%;
     text-align: center;
@@ -1127,7 +1127,6 @@ a button {
     font-size: 20px;
     text-align: left;
     font-family: "OCRA", sans-serif;
-    margin: 70px;
   }
 
   .category__all-posts {

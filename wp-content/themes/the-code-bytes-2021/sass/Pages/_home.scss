@@ -4,8 +4,8 @@
 
 /* General & Mobile */
 
-.tagline,
-.social-container,
+.landing__tagline,
+.landing__socials,
 .landing__title-desktop {
   display: none;
 }
@@ -84,8 +84,8 @@
 }
 
 @include media('medium-large') {
-  .tagline,
-  .social-container,
+  .landing__tagline,
+  .landing__socials,
   .landing__banner,
   .landing__buttons,
   .landing__title-desktop {
@@ -103,7 +103,7 @@
     width: 99%;
     max-width: $max-width;
 
-    .tagline {
+    .landing__tagline {
       font-family: $accent-font;
       font-size: 9.5px;
 
@@ -113,7 +113,7 @@
       }
     }
 
-    .social-container {
+    .landing__socials {
       justify-content: space-between;
       width: 100px;
       padding-right: 50px;
@@ -162,7 +162,7 @@
   }
 }
 
-.home__buffer {
+.code-resources__buffer {
   width: 100%;
   height: 20vh;
 }
@@ -171,7 +171,7 @@
   Top Articles & Latest Articles
   *************************************/
 
-.home__articles-container {
+.articles {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -187,7 +187,7 @@
   }
 }
 
-.home__section-article {
+.articles-promotions {
   max-width: $max-width;
   h1 {
     text-align: center;
@@ -239,22 +239,22 @@
 }
 
 @include media('medium-large') {
-  .home__section-article {
+  .articles-promotions {
     display: flex;
     flex-wrap: wrap;
 
-    .promotional__container {
+    .promotions {
       @include flex-center();
       width: 49%;
     }
   }
 
-  .home__section-article#latest-articles {
+  .articles-promotions#latest-articles {
     flex-direction: row-reverse;
   }
 
-  .home__articles-container,
-  .home__section-article h1 {
+  .articles,
+  .articles-promotions h1 {
     width: 50%;
     justify-content: space-between;
     margin-left: 10px;
@@ -282,7 +282,7 @@
       // font-weight: normal;
     }
 
-    .home__buttons--section {
+    .articles__buttons {
       margin-top: 30px;
       width: 100%;
       text-align: center;

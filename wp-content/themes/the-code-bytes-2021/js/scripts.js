@@ -1,8 +1,45 @@
-console.log('use me!');
+// Header: Disable scroll
+const toggleMenu = document.querySelector('.menu-toggle');
 
-// Browse More
+const disableScroll = () => {
+  const toggleMenuOpen = toggleMenu.getAttribute('aria-expanded');
 
-const browseButton = document.querySelectorAll('.browse-more');
+  if (toggleMenuOpen == 'false') {
+    return (document.body.style.overflow = 'hidden');
+  }
+
+  return (document.body.style.overflow = 'visible');
+};
+
+toggleMenu.addEventListener('click', disableScroll);
+
+// Header: Check for active link
+const currentURL = window.location.href;
+let navChildren = document.querySelectorAll('.menu-item');
+
+const displayActiveLink = () => {
+  navChildren.forEach((navChild) => {
+    let navChildURL = navChild.firstElementChild;
+    let parentNode = navChild.parentElement;
+
+    if (navChildURL == currentURL) {
+      navChild.classList.add('active');
+
+      // Transverse up from menuitem anchor tag
+      while (parentNode.tagName != 'NAV' || parentNode.tagName != 'BODY') {
+        if (parentNode.tagName == 'LI') {
+          parentNode.classList.add('active');
+        }
+        parentNode = parentNode.parentElement;
+      }
+    }
+  });
+};
+
+displayActiveLink();
+
+// Homepage: Browse Mores
+const browseButton = document.querySelectorAll('.articles__browse-more');
 
 const loadMoreArticles = (event) => {
   const articles = document.querySelectorAll(
@@ -29,13 +66,6 @@ const loadMoreArticles = (event) => {
       button.style.display = 'none';
     }
   });
-
-  //   browseButton.forEach((button) => {
-  //     if (button.clicked == 'true') {
-  //       alert('button pressed');
-  //       button.style.display = 'none';
-  //     }
-  //   });
 };
 
 browseButton.forEach((button) => {

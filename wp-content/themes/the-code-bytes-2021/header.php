@@ -39,7 +39,9 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
 				endif;
+
 				$the_code_bytes_2021_description = get_bloginfo( 'description', 'display' );
+				
 				if ( $the_code_bytes_2021_description || is_customize_preview() ) :
 					?>
 					<p class="site-description"><?php echo $the_code_bytes_2021_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
@@ -67,48 +69,6 @@
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
-		<script>
-		const toggleMenu = document.querySelector('.menu-toggle')
-
-		// Disable scroll 
-		const disableScroll = () => {
-			const toggleMenuOpen = toggleMenu.getAttribute('aria-expanded');
-
-			if(toggleMenuOpen == 'false') {
-				return document.body.style.overflow="hidden"
-			} 
-			
-			return document.body.style.overflow="visible"
-		}
-
-		toggleMenu.addEventListener("click", disableScroll);
-
-
-			
-		// Check for active link
-		const currentURL = window.location.href;
-		let navChildren = document.querySelectorAll('.menu-item');
-		
-		const displayActiveLink = () => {
-
-			navChildren.forEach((navChild) => {
-				let navChildURL = navChild.firstElementChild;
-				let parentNode = navChild.parentElement;
-
-				if (navChildURL == currentURL) { 
-					navChild.classList.add('active');
-
-					// Transverse up from menuitem anchor tag
-					while(parentNode.tagName != 'NAV' || parentNode.tagName != 'BODY') {
-						if(parentNode.tagName == 'LI') { parentNode.classList.add('active'); }
-						parentNode = parentNode.parentElement
-					}
-				}
-			});
-		};
-
-		displayActiveLink();
-		</script>
 	</header>
 	<div class="header-shim"></div>
 	<!-- #masthead -->
