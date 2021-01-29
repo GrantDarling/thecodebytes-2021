@@ -1,3 +1,37 @@
+// Homepage: Browse Mores
+const browseButton = document.querySelectorAll('.articles__browse-more');
+
+const loadMoreArticles = (event) => {
+  const articles = document.querySelectorAll(
+    '.categories__article:nth-child(n+4)'
+  );
+
+  const filteredArticles = Array.prototype.slice
+    .call(articles)
+    .filter(
+      (article) =>
+        article.getAttribute('data-article') ==
+        event.target.getAttribute('data-article')
+    );
+
+  filteredArticles.forEach((article) => {
+    article.style.display = 'flex';
+  });
+
+  browseButton.forEach((button) => {
+    if (
+      button.getAttribute('data-article') ==
+      event.target.getAttribute('data-article')
+    ) {
+      button.style.display = 'none';
+    }
+  });
+};
+
+browseButton.forEach((button) => {
+  button.addEventListener('click', loadMoreArticles);
+});
+
 // Header: Disable scroll
 const toggleMenu = document.querySelector('.menu-toggle');
 
@@ -37,37 +71,3 @@ const displayActiveLink = () => {
 };
 
 displayActiveLink();
-
-// Homepage: Browse Mores
-const browseButton = document.querySelectorAll('.articles__browse-more');
-
-const loadMoreArticles = (event) => {
-  const articles = document.querySelectorAll(
-    '.categories__article:nth-child(n+4)'
-  );
-
-  const filteredArticles = Array.prototype.slice
-    .call(articles)
-    .filter(
-      (article) =>
-        article.getAttribute('data-article') ==
-        event.target.getAttribute('data-article')
-    );
-
-  filteredArticles.forEach((article) => {
-    article.style.display = 'flex';
-  });
-
-  browseButton.forEach((button) => {
-    if (
-      button.getAttribute('data-article') ==
-      event.target.getAttribute('data-article')
-    ) {
-      button.style.display = 'none';
-    }
-  });
-};
-
-browseButton.forEach((button) => {
-  button.addEventListener('click', loadMoreArticles);
-});

@@ -14,46 +14,40 @@
 
 get_header();
 ?>
-
 	<main id="primary" class="site-main">
-
-		<!-- Above The Fold -->
-		<section class="landing">
-
-			<!-- Banner -->
-			<div class="landing__banner">
-				<div class="landing__tagline">Keeping Code Cool <span>Since 2020.</span></div>
-				<div class="landing__socials">
-					<a target="_blank" class="landing__social" href="mailto:grantcarterdarling@gmail.com?subject=The Code Bytes Inquiry"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/email-me.svg" alt="Medium" /></a>
-					<a target="_blank" class="landing__social" href="https://grantdarling.medium.com/"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/Medium-Logo.svg" alt="Email" /></a>
-				</div>
+		<!-- Landing Banner -->
+		<div class="landing__banner">
+			<div class="landing__tagline">Keeping Code Cool <span>Since 2020.</span></div>
+			<div class="landing__socials">
+				<a target="_blank" class="landing__social" href="mailto:grantcarterdarling@gmail.com?subject=The Code Bytes Inquiry"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/email-me.svg" alt="Medium" /></a>
+				<a target="_blank" class="landing__social" href="https://grantdarling.medium.com/"><img src="https://thecodebytes.com/wp-content/uploads/2021/01/Medium-Logo.svg" alt="Email" /></a>
 			</div>
+		</div>
 
-			<!-- Landing Content -->
-			<div class="landing__container">
-			<h1 class="landing__title-desktop">THE CODE BYTES</h1>
-			<div class="landing__buttons">
-				<a class="scroll" href="#top-articles"> 
-					<button id="landing__button--1">
-						<svg width="180px" height="60px" preserveAspectRatio="none" class="border">
-						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
-						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="hl-line" />
-						</svg>
-						<span>Top Articles</span>
-					</button>
-				</a>
-				<a class="scroll" href="#code-resources">
-					<button id="landing__button--2">
-						<svg width="5080px" height="60px" preserveAspectRatio="none" class="border">
-						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
-						<polyline points="151,1 151,44.6 1,44.6 1,1 151,1"  preserveAspectRatio="none"class="hl-line" />
-						</svg>
-						<span>Code Resources</span>
-					</button>
-				</a>
-			</div>
-			<a class="landing__about" href="/about">Want to learn more?</a>
-			</div>
+		<!-- Landing Content -->
+		<section class="landing__container">
+		<h1 class="landing__title-desktop">THE CODE BYTES</h1>
+		<div class="landing__buttons">
+			<a class="scroll" href="#top-articles"> 
+				<button id="landing__button--1">
+					<svg width="180px" height="60px" preserveAspectRatio="none" class="border">
+					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
+					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="hl-line" />
+					</svg>
+					<span>Top Articles</span>
+				</button>
+			</a>
+			<a class="scroll" href="#code-resources">
+				<button id="landing__button--2">
+					<svg width="5080px" height="60px" preserveAspectRatio="none" class="border">
+					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
+					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1"  preserveAspectRatio="none"class="hl-line" />
+					</svg>
+					<span>Code Resources</span>
+				</button>
+			</a>
+		</div>
+		<a class="landing__about" href="/about">Want to learn more?</a>
 		</section>
 
 		<!-- Top Articles -->

@@ -109,32 +109,3 @@
     @content;
   }
 }
-
-/**
- * SCSS
- * 
- * .example {
- * @include media(566px) {
- *    font-size: 24px;
- * }
- * 
- * @include mq("x-small") {
- *    font-size: 24px;
- * }
-*/
-
-/**
- * CONVERTED TO > CSS
- * 
- * @media only screen and (min-width: 566px) {
- *    .example {
- *       font-size: 24px;
- *    }
- * }
-
- * @media only screen and (min-width: 400px) {
- *    .example {
- *       font-size: 24px;
- *    }
- * }
-*/
