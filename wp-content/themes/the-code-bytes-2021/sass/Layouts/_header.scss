@@ -370,3 +370,15 @@
     }
   }
 }
+
+.header-shim {
+  width: 100%;
+  height: 250px;
+  background: $white;
+}
+
+@include media('medium') {
+  .header-shim {
+    height: 140px;
+  }
+}

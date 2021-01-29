@@ -18,9 +18,10 @@
 }
 
 .landing__container {
-  padding-top: 6vh;
+  padding-bottom: 6vh;
   height: 60vh;
   align-items: center;
+  justify-content: center;
 
   #landing__button--1,
   #landing__button--2 {
@@ -98,7 +99,6 @@
 
   .landing__banner {
     @include flex-align(space-between, flex-end);
-    @include padding(6vh null null null);
     @include margin(null auto);
     width: 99%;
     max-width: $max-width;

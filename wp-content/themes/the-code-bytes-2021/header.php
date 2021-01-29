@@ -110,4 +110,5 @@
 		displayActiveLink();
 		</script>
 	</header>
+	<div class="header-shim"></div>
 	<!-- #masthead -->
