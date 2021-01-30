@@ -11,13 +11,18 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header>
+		<h1><?php echo get_the_title() ?> </h1>
 		<?php echo get_the_post_thumbnail() ?>
-		<?php echo get_the_title() ?> <br><br>
-		<?php echo get_the_date()?> <br><br>
-		<?php echo get_the_author() ?>
-		<?php echo get_avatar(get_the_author()) ?>
-		<?php echo get_the_content() ?>
+		<div class="author-and-date">	
+			<?php echo get_avatar(get_the_author()) ?>
+			Written By: <?php echo get_the_author() ?> <br>
+			<?php echo get_the_date()?>
+		</div>
 	</header>		
+	<section class="content">
+		<?php echo get_the_content() ?>
+
+	</section>
 
 <footer class="entry-footer">
 		</footer><!-- .entry-footer -->
