@@ -37,13 +37,13 @@ get_header();
 					<span>Top Articles</span>
 				</button>
 			</a>
-			<a class="scroll" href="#code-resources">
+			<a class="scroll" href="#latest-articles">
 				<button id="landing__button--2">
 					<svg width="5080px" height="60px" preserveAspectRatio="none" class="border">
 					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1" preserveAspectRatio="none" class="bg-line" />
 					<polyline points="151,1 151,44.6 1,44.6 1,1 151,1"  preserveAspectRatio="none"class="hl-line" />
 					</svg>
-					<span>Code Resources</span>
+					<span>Latest Articles</span>
 				</button>
 			</a>
 		</div>

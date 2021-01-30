@@ -1476,10 +1476,12 @@ a .newsletter form .tnp-submit,
 .article article header {
   box-sizing: border-box;
   padding: 0 20px;
+  line-height: 1.5;
 }
 .article article .author-and-date {
   box-sizing: border-box;
   padding: 0 20px;
+  margin-top: 20px;
 }
 .article article .author-and-date img {
   width: 30px;
@@ -1515,10 +1517,15 @@ a .newsletter form .tnp-submit,
 }
 
 .nav-links {
-  margin-top: 50px;
   box-sizing: border-box;
-  max-width: 99%;
+  max-width: 71%;
   margin: auto;
+  margin-top: 50px;
+}
+
+iframe {
+  box-sizing: border-box;
+  width: 100%;
 }
 
 div#comments {

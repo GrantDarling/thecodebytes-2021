@@ -308,11 +308,13 @@
     header {
       box-sizing: border-box;
       padding: 0 20px;
+      line-height: 1.5;
     }
 
     .author-and-date {
       box-sizing: border-box;
       padding: 0 20px;
+      margin-top: 20px;
       img {
         @include box(30px);
         border-radius: 100%;
@@ -355,12 +357,16 @@
 }
 
 .nav-links {
-  margin-top: 50px;
   box-sizing: border-box;
-  max-width: 99%;
+  max-width: 71%;
   margin: auto;
+  margin-top: 50px;
 }
 
+iframe {
+  box-sizing: border-box;
+  width: 100%;
+}
 div#comments {
   margin-top: 14vh;
 
