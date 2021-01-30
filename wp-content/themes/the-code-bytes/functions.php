@@ -293,13 +293,13 @@ add_filter('get_search_form', 'wpforo_search_form');
      return $title;
  });
 
-        /**
-       * create read more for excerpt
-        */
+/**
+ * create read more for excerpt
+*/
 
-        // Add more-link text to excerpt
-        function new_excerpt_more($excerpt)
-        {
-            return $excerpt. '... <a class="more-link" href="'. get_permalink(get_the_ID()) . '">' . __('Read More', 'baskerville') . ' &rarr;</a>';
-        }
-        add_filter('get_the_excerpt', 'new_excerpt_more');
+// Add more-link text to excerpt
+function new_excerpt_more($excerpt)
+{
+    return $excerpt. '... <a class="more-link" href="'. get_permalink(get_the_ID()) . '">' . __('Read More', 'baskerville') . ' &rarr;</a>';
+}
+add_filter('get_the_excerpt', 'new_excerpt_more');

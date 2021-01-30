@@ -30,6 +30,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 4%;
 }
 
 @include media('medium-large') {

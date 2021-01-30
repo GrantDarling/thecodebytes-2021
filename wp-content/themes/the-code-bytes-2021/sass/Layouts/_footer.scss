@@ -1,30 +1,60 @@
-.footer-sections {
+.site-footer {
+  width: 100%;
+  background: $white;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: solid 1px #e3e3e3;
+}
+
+.main {
+  display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   width: 100%;
-  height: 250px;
+  height: 100%;
+  background: $white;
+  padding: 3% 0;
+  max-width: $max-width;
 
   #footer-section-1,
   #footer-section-2,
   #footer-section-3 {
-    width: 100%;
-    //height: 100%;
+    width: 60%;
+    padding: 2.5em;
+  }
 
-    border: solid 1px teal;
+  .newsletter {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  img {
+    width: 125px;
+    height: 125px;
   }
 }
 
-.footer-bottom {
+.bottom {
+  @include flex-center();
+  font-family: $primary-font;
   width: 100%;
-  background: white;
+  height: 40px;
+  background: $black;
+  color: $white;
   text-align: center;
 }
 
 @include media('medium') {
-  .footer-sections {
+  .main {
     flex-direction: row;
   }
 }
