@@ -142,7 +142,7 @@
   font-family: $primary-font;
   font-weight: $bold;
   border-radius: 4px;
-  box-shadow: 5px -1px 6px $header-shadow;
+  box-shadow: 5px -1px 6px $HEADER__shadow;
 
   &:hover {
     box-shadow: none;

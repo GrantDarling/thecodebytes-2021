@@ -22,7 +22,12 @@ div#ss-floating-bar {
 
 /* VENDORS */
 /* Abstract */
-/* Mixins */
+/****************
+     MIXINS
+****************/
+/****************
+    VARIABLES
+****************/
 @font-face {
   font-family: "OCRA";
   src: url("fonts/OCRA.woff2") format("woff2"), url("fonts/OCRA.woff") format("woff"), url("fonts/OCRA.ttf") format("truetype");

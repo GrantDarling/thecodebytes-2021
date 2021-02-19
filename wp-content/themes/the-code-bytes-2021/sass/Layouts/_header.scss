@@ -278,8 +278,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $header-bg-color;
-  box-shadow: 5px -1px 13px $header-shadow;
+  background: $HEADER__bg-color;
+  box-shadow: 5px -1px 13px $HEADER__shadow;
   z-index: 1000;
 }
 
@@ -300,8 +300,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $header-bg-color;
-    box-shadow: 5px -1px 13px $header-shadow;
+    background: $HEADER__bg-color;
+    box-shadow: 5px -1px 13px $HEADER__shadow;
     z-index: 1;
   }
 
@@ -354,7 +354,7 @@
       height: 60px;
       align-self: center;
       justify-self: center;
-      background: $header-bg-color;
+      background: $HEADER__bg-color;
 
       a {
         height: 100%;

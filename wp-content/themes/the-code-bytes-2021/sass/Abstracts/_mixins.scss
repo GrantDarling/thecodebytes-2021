@@ -1,22 +1,6 @@
-/* Mixins */
-
-// Position + Sides : @include position(relative, 0 null null 10em);
-@mixin position($position, $side-values) {
-  $sides: (
-    'top': nth($side-values, 1),
-    'right': nth($side-values, 2),
-    'bottom': nth($side-values, 3),
-    'left': nth($side-values, 4)
-  );
-
-  position: $position;
-
-  @each $side, $value in $sides {
-    @if $value {
-      #{$side}: $value;
-    }
-  }
-}
+/****************
+     MIXINS
+****************/
 
 // Flex Center : @include flex-center();
 @mixin flex-center() {
@@ -52,7 +36,6 @@
 
 // Border Radius : @include border-radius(3px)
 @mixin border-radius($radius: $border-radius) {
-  // !!! g should border-radius be renamed for better relevance?
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
@@ -95,7 +78,6 @@
   height: $height;
 }
 
-// Media query mixin to be discussed below...
 @mixin media($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
     $width: map_get($breakpoints, $width);
