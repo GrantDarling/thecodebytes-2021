@@ -383,6 +383,9 @@ template {
   display: none;
 }
 
+/****************
+      BASE
+****************/
 html {
   scroll-behavior: smooth;
 }
@@ -815,6 +818,9 @@ main {
   }
 }
 /* Components */
+/****************
+     BUTTONS
+****************/
 button,
 .button,
 .newsletter form .tnp-submit {
@@ -836,11 +842,14 @@ a .newsletter form .tnp-submit,
   color: #343434;
 }
 
+/****************
+   PROMOTIONAL
+****************/
 .promotions {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin-top: 8vh;
 }
 .promotions__p {
@@ -848,10 +857,10 @@ a .newsletter form .tnp-submit,
 }
 .promotions__button {
   cursor: pointer;
-  font-size: 20px;
-  border: solid 1px #9b9999;
   width: 50%;
   height: 48px;
+  font-size: 20px;
+  border: solid 1px #9b9999;
   box-shadow: 3px 1px 8px #e3e3e3;
 }
 .promotions__button:hover {
@@ -947,7 +956,7 @@ a .newsletter form .tnp-submit,
   }
 }
 /****************
-     COMMENTS
+    COMMENTS
 ****************/
 #comments {
   max-width: 900px;
@@ -957,14 +966,14 @@ a .newsletter form .tnp-submit,
   padding: 20px;
   margin: 20px 0;
 }
-#comments ol li {
-  list-style-type: none;
+#comments a {
+  color: #f89e86;
 }
 #comments ol.comment-list {
   padding: 0;
 }
-#comments a {
-  color: #f89e86;
+#comments ol li {
+  list-style-type: none;
 }
 
 /* Pages */

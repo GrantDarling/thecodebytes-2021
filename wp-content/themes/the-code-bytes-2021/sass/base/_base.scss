@@ -1,3 +1,7 @@
+/****************
+      BASE
+****************/
+
 html {
   scroll-behavior: smooth;
 }
@@ -31,7 +35,4 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 4%;
-}
-
-@include media('medium-large') {
 }

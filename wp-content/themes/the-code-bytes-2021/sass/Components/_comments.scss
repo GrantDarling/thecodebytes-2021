@@ -1,5 +1,5 @@
 /****************
-     COMMENTS
+    COMMENTS
 ****************/
 
 #comments {
@@ -11,15 +11,17 @@
     margin: 20px 0;
   }
 
-  ol li {
-    list-style-type: none;
-  }
-
-  ol.comment-list {
-    padding: 0;
-  }
-
   a {
     color: $CB-ACCENT;
+  }
+
+  ol {
+    &.comment-list {
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
   }
 }
