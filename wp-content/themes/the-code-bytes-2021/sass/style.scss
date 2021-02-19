@@ -11,7 +11,7 @@ div#ss-floating-bar {
 /* Abstract */
 @import 'Abstracts/mixins';
 @import 'Abstracts/variables';
-@import 'Abstracts/_fonts';
+@import 'Abstracts/fonts';
 
 /* Base */
 @import 'Base/accessibility';
@@ -23,11 +23,15 @@ div#ss-floating-bar {
 @import 'Layouts/footer';
 
 /* Components */
-@import 'Components/_buttons';
-@import 'Components/_promotional';
-@import 'Components/_comments';
+@import 'Components/buttons';
+@import 'Components/promotional';
+@import 'Components/comments';
+@import 'Components/_categories';
 
 /* Pages */
-@import 'Pages/home';
+@import 'Pages/_home';
+@import 'Pages/_single';
+@import 'Pages/_about';
+@import 'Pages/_search';
 
-@import 'dump';
+@import 'shame';

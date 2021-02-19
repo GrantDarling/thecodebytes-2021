@@ -1,10 +1,14 @@
+/****************
+    FOOTER
+****************/
+
 .site-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   background: $white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-top: solid 1px #e3e3e3;
+  border-top: solid 1px $white-mercury;
 }
 
 .main {
@@ -38,8 +42,8 @@
   }
 
   img {
-    width: 125px;
-    height: 125px;
+    width: 225px;
+    height: auto;
   }
 }
 

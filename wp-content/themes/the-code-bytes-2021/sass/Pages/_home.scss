@@ -157,7 +157,6 @@
 /* Top Articles & Latest Articles*/
 
 // General & Mobile
-
 .articles {
   @include flex-align(space-around, null);
   flex-wrap: wrap;
@@ -195,7 +194,6 @@
 }
 
 // Tablet & Desktop
-
 @include media('medium-large') {
   .articles-promotions {
     display: flex;

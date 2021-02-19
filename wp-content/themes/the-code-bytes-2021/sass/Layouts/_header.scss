@@ -35,7 +35,6 @@
 }
 
 // Search Form
-
 .main-navigation {
   position: relative;
   display: flex;
@@ -129,6 +128,31 @@
   .active > a,
   a:hover {
     color: $CB-ACCENT;
+  }
+}
+
+.navigation {
+  text-align: center;
+  width: 100%;
+}
+
+.nav-links {
+  background: $white;
+  border: solid 1px $grey-dust;
+  box-shadow: 0px 1px 8px $white-mercury;
+  font-family: $primary-font;
+  font-weight: $bold;
+  color: $black-mine-shaft;
+  text-align: center;
+  padding: 1em;
+  height: 100%;
+
+  a {
+    font-size: 22px;
+    font-family: $primary-font;
+    text-decoration: none;
+    color: $black-mine-shaft;
+    padding: 1em;
   }
 }
 
