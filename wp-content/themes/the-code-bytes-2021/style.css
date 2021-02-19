@@ -16,10 +16,7 @@ The Code Bytes 2021 is based on Underscores https://underscores.me/, (C) 2012-20
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
-section#recent-posts-3,
-div#ss-floating-bar,
-a.post-edit-link,
-#wpadminbar {
+div#ss-floating-bar {
   display: none;
 }
 
@@ -417,6 +414,9 @@ main {
 }
 
 /* Layout */
+/****************
+     HEADER
+****************/
 /* General */
 #masthead,
 .navigation-header {
@@ -941,6 +941,27 @@ a .newsletter form .tnp-submit,
     margin-top: 0;
   }
 }
+/****************
+     COMMENTS
+****************/
+#comments {
+  max-width: 900px;
+}
+#comments article {
+  border: solid 1px #343434;
+  padding: 20px;
+  margin: 20px 0;
+}
+#comments ol li {
+  list-style-type: none;
+}
+#comments ol.comment-list {
+  padding: 0;
+}
+#comments a {
+  color: #f89e86;
+}
+
 /* Pages */
 /********************
       Home 

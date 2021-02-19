@@ -21,7 +21,7 @@
 				</aside>
 			</div>
 			<div id="footer-section-2">
-				<img src="http://thecodebytes2021.local/wp-content/uploads/2021/01/cropped-the-code-bytes-logo-small.png" alt="The Code Bytes Logo">
+				<img src="https://thecodebytes.com/wp-content/uploads/2021/01/the-code-bytes-logo-2@2x.png" alt="The Code Bytes Logo">
 			</div>
 			<div id="footer-section-3">
 				<h2 class="footer__disclaimer-h1">Disclaimer</h2>

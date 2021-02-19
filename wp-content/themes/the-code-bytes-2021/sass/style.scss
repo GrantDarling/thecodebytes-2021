@@ -1,10 +1,7 @@
 @import 'Abstracts/_theme-header';
 
 // TO BE REMOVED
-section#recent-posts-3,
-div#ss-floating-bar,
-a.post-edit-link,
-#wpadminbar {
+div#ss-floating-bar {
   display: none;
 }
 
@@ -26,8 +23,9 @@ a.post-edit-link,
 @import 'Layouts/footer';
 
 /* Components */
-@import 'Components/buttons';
-@import 'Components/newsletter';
+@import 'Components/_buttons';
+@import 'Components/_newsletter';
+@import 'Components/_comments';
 
 /* Pages */
 @import 'Pages/home';

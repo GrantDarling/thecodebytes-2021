@@ -1,0 +1,25 @@
+/****************
+     COMMENTS
+****************/
+
+#comments {
+  max-width: 900px;
+
+  article {
+    border: solid 1px $CB-BLACK;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  ol li {
+    list-style-type: none;
+  }
+
+  ol.comment-list {
+    padding: 0;
+  }
+
+  a {
+    color: $CB-ACCENT;
+  }
+}

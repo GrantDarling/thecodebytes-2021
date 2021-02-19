@@ -63,7 +63,7 @@ get_header();
 			<div class="promotions">
 				<aside class="newsletter">
 					<header>
-						<img src="http://thecodebytes2021.local/wp-content/uploads/2021/01/cropped-the-code-bytes-logo-small.png" />
+						<img src="https://thecodebytes.com/wp-content/uploads/2021/01/the-code-bytes-logo-2@2x.png" />
 					</header>
 					<h2> The Code Bytes Newsletter </h2>
 						<p> Keep up to date. </p>
