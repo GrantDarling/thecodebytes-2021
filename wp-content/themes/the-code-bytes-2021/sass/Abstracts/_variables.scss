@@ -1,18 +1,11 @@
-/****************
-    VARIABLES
-****************/
-
 // Colors
 $white: #ffffff;
 $white-alabaster: #fafafa;
-$white-mercury: #e3e3e3;
 $grey-dust: #9b9999;
 $grey-cod: #1d1d1d;
 $black-mine-shaft: #343434;
 $black: black;
-
 $orange-geraldine: #f89e86;
-$success-green: #59c371;
 
 // Primary Colors
 $CB-BLACK: $black-mine-shaft;
@@ -32,11 +25,11 @@ $bold: 700;
 $normal: 400;
 
 // Header
-$HEADER__bg-color: $white-alabaster;
-$HEADER__shadow: #d3d2d2;
+$header-bg-color: $white-alabaster;
+$header-shadow: #d3d2d2;
 $HEADER__menu-height: 75px;
 $HEADER__mobile-menu-top: 180px;
-$HEADER__mobile-menu-open: $HEADER__mobile-menu-top + $HEADER__menu-height;
+$header-mobile-menu-open: $HEADER__mobile-menu-top + $HEADER__menu-height;
 
 // Media Query Breakpoints
 $breakpoints: (

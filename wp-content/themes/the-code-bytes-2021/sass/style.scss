@@ -1,7 +1,10 @@
 @import 'Abstracts/_theme-header';
 
 // TO BE REMOVED
-div#ss-floating-bar {
+section#recent-posts-3,
+div#ss-floating-bar,
+a.post-edit-link,
+#wpadminbar {
   display: none;
 }
 
@@ -11,7 +14,7 @@ div#ss-floating-bar {
 /* Abstract */
 @import 'Abstracts/mixins';
 @import 'Abstracts/variables';
-@import 'Abstracts/fonts';
+@import 'Abstracts/_fonts';
 
 /* Base */
 @import 'Base/accessibility';
@@ -24,14 +27,9 @@ div#ss-floating-bar {
 
 /* Components */
 @import 'Components/buttons';
-@import 'Components/promotional';
-@import 'Components/comments';
-@import 'Components/_categories';
+@import 'Components/newsletter';
 
 /* Pages */
-@import 'Pages/_home';
-@import 'Pages/_single';
-@import 'Pages/_about';
-@import 'Pages/_search';
+@import 'Pages/home';
 
-@import 'shame';
+@import 'dump';

@@ -1,10 +1,10 @@
 === Jetpack - WP Security, Backup, Speed, & Growth ===
 Contributors: automattic, adamkheckler, aduth, akirk, allendav, alternatekev, andy, annezazu, apeatling, azaozz, batmoo, barry, beaulebens, biskobe, blobaugh, brbrr, cainm, cena, cfinke, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, davoraltman, daniloercoli, delawski, designsimply, dllh, drawmyface, dsmart, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, fgiannar, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, jblz, jasmussen, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, leogermani, lschuyler, macmanx, martinremy, matt, matveb, mattwiebe, maverick3x6, mcsf, mdawaffe, mdbitz, MichaelArestad, migueluy, mikeyarce, mkaz, nancythanki, nickmomrik, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, ryancowles, richardmuscat, richardmtl, robertbpugh, roccotripaldi, samhotchkiss, scarstocea, scottsweb, sdquirk, sermitr, simison, stephdau, tmoorewp, tyxla, Viper007Bond, westi, yoavf, zinigor
 Tags: WP, backup, social, AMP, WooCommerce, malware, scan, spam, CDN, social
-Stable tag: 9.3.1
-Requires at least: 5.5
+Stable tag: 9.6.1
+Requires at least: 5.6
 Requires PHP: 5.6
-Tested up to: 5.6
+Tested up to: 5.7
 
 The best WP plugin for backup, anti spam, malware scan, CDN, AMP, social, search, contact form, and integrations with Woo, Facebook, Instagram, Google
 
@@ -95,11 +95,11 @@ Alternatively, install Jetpack via the plugin directory, or upload the files man
 
 Yes! Jetpack's core features are and always will be free.
 
-These include: site stats, a high-speed CDN for images, related posts, downtime monitoring, brute force attack protection, automated sharing to social networks, sidebar customization, and much more.
+These include: site stats, a high-speed CDN for images, related posts, downtime monitoring, brute force attack protection, automated sharing to social networks, sidebar customization, SEO (search engine optimization) tools, and much more.
 
 = Should I purchase a paid plan? =
 
-It depends on your site and what kind of protection, performance, and design you need. If you make money from your site, the answer is often “yes.” For context, Jetpack's paid services include real-time backups, security scanning, premium themes, spam filtering, video hosting, site monetization, SEO (search engine optimization) tools, search, priority support, and more.
+It depends on your site and what kind of protection, performance, and design you need. If you make money from your site, the answer is often “yes.” For context, Jetpack's paid services include real-time backups, security scanning, premium themes, spam filtering, video hosting, site monetization, search, priority support, and more.
 
 To learn more about the essential security and WordPress services we provide and see how we can improve your site, visit [our plans page](https://jetpack.com/pricing?from=wporg).
 
@@ -238,56 +238,65 @@ Our Cookie and Consent Banner can help you comply with GDPR. The European Union�
 4. Promote your newest posts, pages, and products across your social media channels.
 
 == Changelog ==
+### 9.6.1 - 2021-04-13
+#### Bug fixes
+- Connection tools: safeguard cleanup tool against accidental option removal.
+- Dashboard: fix loading indicator styles by deprecating our custom solution in favor of WordPress Core's Spinner.
+- Instant Search: fix Customizer and styling bugs introduced in 9.6.
+- Instant Search: Handle pagination edge-case with excluded post types.
+- Sharing: ensure the feature can be used when Jetpack is used in Offline mode.
+- Stats: Fix time period selection on the stats page.
 
-= 9.3.1 =
+### 9.6 - 2021-04-06
+#### Enhancements
+- Beautiful Math: remove title attribute from generated image.
+- Blocks: add width option to buttons in Subscriptions, Revue, Form, Calendly, and Payments blocks.
+- Blocks: improve reliability of all blocks via unit tests.
+- Dashboard: add new options to customize SEO settings.
+- Dashboard: add new option to input license key.
+- Dashboard: update recommmendations notice to improve accessibility.
+- General: allow the use of some Jetpack features without connecting to a WordPress.com account.
+- Instant Search: add a new result format layout, for sites using WooCommerce.
+- Instant Search: improve performance thanks to lazily loading.
+- Instant Search: only use site accelerator for displaying images if it is enabled on the site.
+- Instant Search: update the search modal design.
+- Jetpack Videos: improve the display of transcoding status for newly uploaded videos.
+- Podcast Player Block: improve fetching of the podcast description.
+- Syncrhonization: add new sync/health endpoint to allow update of the sync health options.
 
-* Release date: January 14, 2021
+#### Improved compatibility
+- Auto-updates: respect auto-update constant/filters in plugin API endpoints.
+- Autoloader: fix uninstallation fatal.
+- General: update colors to match dashboard color changes in WordPress 5.7.
+- Gravatar Hovercards: fix compatibility with the AMP plugin for Pingbacks and Trackbacks.
+- Latest Instagram Posts Block: improve compatibility with Gutenberg 10.1.0.
+- Markdown: avoid processing URLs that may include Markdown syntax.
+- Opentable Block: improve compatibility with Gutenberg 10.1.0.
+- Podcast Player Block: fix compatibility with the AMP plugin in the Customizer preview.
+- Podcast Player Block: improve compatibility with Gutenberg 10.1.0.
+- Synchronization: avoid issues with themes or plugins using anonymous functions within hooks.
 
-**Bug fixes**
-
-* Multisite: avoid Fatals on sites using the WPMUDEV domain mapping plugin.
-* SEO Tools: prevent a PHP notice in some situations involving taxonomy or author pages.
-
-= 9.3 =
-
-* Release date: January 12, 2021
-* Release post: https://wp.me/p1moTy-sgZ
-
-**Enhancements**
-
-* Autoloader: improve performance by caching known plugins.
-* Instant Search: improve compatibility with IE11.
-* Related Posts: use the semantic time element when displaying dates.
-* Sharing: defer loading of the reCAPTCHA library by default.
-
-**Improved compatibility**
-
-* AMP: avoid PHP notice on sites using legacy versions of the AMP plugin.
-* Dashboard: avoid errors on sites using PHP 8.
-* General: use modern JavaScript best practices for loading scripts.
-* Infinite Scroll: add compatibility for the TwentyTwentyOne theme.
-* Search: improve styling for the TwentyTwenty theme.
-* Synchronization: improve integrity of synchronization between your site and WordPress.com.
-* WordPress.com Toolbar: iterate on the design and functionality of the toolbar to match the toolbar in use on WordPress.com.
-
-**Bug fixes**
-
-* Autoloader: resolve symbolic links in active plugin paths.
-* Autoloader: ensure deactivating plugins aren't cached.
-* Blocks: improve sidebar display in non-fullscreen mode.
-* Content Options: do not output CSS when it is not needed.
-* Instant Search: improve display of tags and categories in search results.
-* Lazy Images: attempt to load all images when printing a post, and inform the user when printing if images haven't been loaded.
-* Podcast Player Block: avoid PHP notices in some scenarios.
-* Search: limit number of filters automatically set up.
-* Slideshow Block: ensure that image captions are always shown, regardless of the theme you're using.
-* Subscription Block: display the correct default placeholder and button text strings in the post editor.
-* Subscriptions: fix the behavior of the toggle switches for the comment subscription settings.
-* Twitter Threads: improve how Twitter Cards are generated for embeds in the thread preview.
-* VideoPress: detect aspect ratios rounding to both 1.77 and 1.78 as 16:9.
-* Widgets: avoid JavaScript errors when displaying the Cookies & Consent Widget.
-* WordPress.com REST API: avoid fatal errors in some scenarios, when updating a post's metadata.
+#### Bug fixes
+- Connection Flow: resolve issue that prevented connections from the Opera browser.
+- Custom Content Types: fix inline quick editing of Restaurant menu items.
+- Instant Search: ensure Escape key always closes search modal.
+- Instant Search: fix an issue that led to a PHP notice for undefined index.
+- Instant Search: Fix modal opening bug within the Customizer.
+- Instant Search: fix handling of Customizer controls using refresh.
+- Instant Search: fix visibility of filter checkboxes in Safari on Twenty Twenty and Twenty Twenty One themes.
+- Instant Search: hide "filters" menu on mobile if there are no filters to display.
+- Instant Search: prevent IE11 from spawning overlay on load.
+- Publicize: avoid notices as embeds are added to a post.
+- Recommendations: when enabling Site Accelerator, also enable Tiled Galleries.
+- Sharing: omit Open Graph description tag from posts with Premium Content.
+- Site Logo: fix issues when updating logo in the Customizer.
+- Star Rating Block: allow 0 stars to be selected.
+- Subscriptions Block: allow block to override color styles, falling back to theme defaults.
+- Tiled Gallery: prevent block validation errors for mosaic and column layouts.
+- Video Block: display fallback when fetching videos that have been deleted.
+- WordPress.com Block Editor: disable if all Jetpack blocks are disabled via a filter.
+- WordPress.com REST API: make sure post metadata is always an array.
 
 --------
 
-[See the previous changelogs here](https://raw.githubusercontent.com/Automattic/jetpack/master/changelog.txt).
+[See the previous changelogs here](https://github.com/Automattic/jetpack/blob/master/projects/plugins/jetpack/CHANGELOG.md#changelog)

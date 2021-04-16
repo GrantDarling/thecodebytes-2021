@@ -1,0 +1,37 @@
+@import 'Abstracts/_theme-header';
+
+// TO BE REMOVED
+div#ss-floating-bar {
+  display: none;
+}
+
+/* VENDORS */
+@import 'Vendors/bourbon/bourbon';
+
+/* Abstract */
+@import 'Abstracts/mixins';
+@import 'Abstracts/variables';
+@import 'Abstracts/fonts';
+
+/* Base */
+@import 'Base/accessibility';
+@import 'Base/normalize';
+@import 'Base/base';
+
+/* Layout */
+@import 'Layouts/header';
+@import 'Layouts/footer';
+
+/* Components */
+@import 'Components/buttons';
+@import 'Components/promotional';
+@import 'Components/comments';
+@import 'Components/_categories';
+
+/* Pages */
+@import 'Pages/_home';
+@import 'Pages/_single';
+@import 'Pages/_about';
+@import 'Pages/_search';
+
+@import 'shame';

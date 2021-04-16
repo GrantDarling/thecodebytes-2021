@@ -256,6 +256,13 @@ If Social Snap is not available in your language, yet, you can <a href="https://
 
 == Changelog ==
 
+
+= 1.1.15 =
+- Fixed: Google Analytics click tracking.
+- Fixed: Compatibility issue - data attributes stripped.
+- Improved: Click to Tweet shortcode allows HTML tags.
+- Improved: Copy button auto-selecting the link.
+
 = 1.1.14 =
 - Updated: Facebook and Linkedin branding - updated icons and colors to match the branding guides.
 - Fixed: Compatiblity with Twenty20 plugin.

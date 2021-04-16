@@ -1329,6 +1329,9 @@ if ( ! function_exists( 'socialsnap_get_allowed_html_tags' ) ) {
 
 			case 'post':
 				$tags = wp_kses_allowed_html( 'post' );
+
+				$tags['a']['data-*'] = true;
+
 				$tags = array_merge(
 					$tags,
 					array(

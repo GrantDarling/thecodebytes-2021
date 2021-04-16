@@ -1,7 +1,3 @@
-/****************
-      BASE
-****************/
-
 html {
   scroll-behavior: smooth;
 }
@@ -37,32 +33,5 @@ main {
   padding-bottom: 4%;
 }
 
-iframe {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.entry-content {
-  height: 100vh;
-}
-
-.page-header,
-.page-title {
-  font-size: 20px;
-  text-align: center;
-  font-family: $accent-font;
-  margin-bottom: 40px;
-  max-width: $max-width;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 20px;
-}
-
-@include media('medium') {
-  .page-header,
-  .page-title {
-    font-size: 36px;
-    text-align: center;
-    font-family: $accent-font;
-  }
+@include media('medium-large') {
 }

@@ -245,3 +245,7 @@ function absoluteGarbageSQLQuery() {
  function newsletter() {
 	 echo do_shortcode('[newsletter]');
  }
+
+/**
+ * Allow Spaces in Content Editor
+ */
